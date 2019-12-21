@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>입력폼 유효성검사_최효은_20191028</title>
+		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+		<style>
+			body{
+				font-family: 'Noto Sans KR', sans-serif;
+			}
+			h1{
+				text-align: center;
+			}
+			table{
+				width: 500px;
+				margin: 0 auto;
+			}
+			td{
+				height: 50px;
+				border-bottom: 1px dashed;
+				padding: 10px 0px;
+			}
+			
+			#fie{
+				width: 500px;
+				margin: 0 auto;
+				font-weight: bold;
+				border: 15px solid rgb(217, 226, 255);
+			}
+			#title{
+				padding:10px;
+				border-radius: 5px;
+				background-color: rgb(122, 162, 255);
+			}
+			#b1{
+				font-family: 'Noto Sans KR', sans-serif;
+				background-color: white;
+				font-weight: bold;
+				width: 100px;
+				height: 30px;
+				color: blue;
+				border: 2px solid blue;
+				border-radius: 100px;
+				cursor:pointer;
+			}
+			#wrap{
+				text-align: center;
+			}
+			#b2{
+				font-family: 'Noto Sans KR', sans-serif;
+				background-color: blue;
+				color: white;
+				width: 200px;
+				height: 40px;
+				border: 1px none blue;
+				border-radius: 100px;
+				cursor:pointer;
+			}
+			#b3{
+				font-family: 'Noto Sans KR', sans-serif;
+				background-color: gray;
+				color: white;
+				width: 200px;
+				height: 40px;
+				border: 1px none blue;
+				border-radius: 100px;
+				cursor:pointer;
+			}
+			
+			
+			.rad{
+				width: 280px;
+				height: 30px;
+				border: 1px none;
+				border-radius: 100px;
+				background-color: rgb(230, 242, 255);
+			}
+			.dot1{
+				height: 5px;
+				color: rgb(176, 176, 176);
+			}
+			
+		
+		</style>
+		<script>
+		
+			function froc1(){
+				
+			var f = document.ff;
+			
+			//1. 아이디 규칙 검사
+			idValue = f.id.value; //입력한 값
+			idReg = /^[a-z][a-zA-Z0-9]{7,9}$/;
+			if(!(idReg.test(idValue))){ //정규식 → 소문자로 시작, 소문자대문자
+				alert("아이디 형식이 올바르지 않습니다.");
+				f.id.focus();
+				return;
+				}
+				
+			//2. 비밀번호 규칙 검사
+			idValue2 = f.id2.value; 
+			idValue2_1 = f.id2_1.value; 
+			idReg2 = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[$@$!%*#?&]).{8,15}$/;
+			if(!(idReg2.test(idValue2))){
+				alert("패스워드 형식이 올바르지 않습니다.");
+				f.id2.focus();
+				return;
+			}
+			if(idValue2 != idValue2_1){
+				alert("패스워드 확인란을 입력해주세요.");
+				f.id2_1.focus();
+				return;
+			}
+			
+			//5. 이름 규칙 검사
+			idValue3 = f.id3.value; 
+			idReg3 = /^[가-힣]{2,5}$|^[a-zA-Z]{5,15}$/;
+			if(!(idReg3.test(idValue3))){ 
+				alert("이름 형식이 올바르지 않습니다.");
+				f.id3.focus();
+				return;
+				}
+			
+			//3. 핸드폰 번호 규칙 검사
+			idValue4 = f.id4.value; 
+			idReg4 = /^\d{3}-\d{3,4}-\d{4}$/;
+			if(!(idReg4.test(idValue4))){ 
+				alert("전화번호 형식이 올바르지 않습니다.");
+				f.id4.focus();
+				return;
+				}
+			
+			
+			//4. 이메일 규칙 검사
+			idValue5 = f.id5.value; 
+			idReg5 = /^[0-9a-zA-Z_-]+@[0-9a-zA-Z_-]+(\.[0-9a-zA-Z]+){1,2}$/;
+			if(!(idReg5.test(idValue5))){ 
+				alert("이메일 형식이 올바르지 않습니다.");
+				f.id5.focus();
+				return;
+				}
+			}
+			
+			
+		</script>
+	</head>
+	
+	<body>
+		<h1>입력폼유효성검사</h1>
+		<form name="ff" onsubmit="return false;">
+			<fieldset id="fie">
+			<legend id="title">회원정보입력</legend>
+				<table>
+					<tr>
+						<td>아이디:</td>
+						<td><input class="rad" type="text" name="id" placeholder="   Enter id"></td>
+						<td><button id="b1">중복검사</button></td>
+					</tr>
+					<tr>
+						<td>패스워드:</td>
+						<td><input class="rad" type="password" name="id2" placeholder="   Enter password"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>패스워드 확인:</td>
+						<td><input class="rad" type="password" name="id2_1" placeholder="   Enter password"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>이름:</td>
+						<td><input class="rad" type="text" name="id3" placeholder="   Enter name"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>성별:</td>
+						<td><input type="radio" name="gender" value="여자" checked>여자<input type="radio" name="gender" value="남자">남자</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>휴대폰 번호:</td>
+						<td><input class="rad" type="tel" name="id4" placeholder="   010-1234-5678"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>이메일:</td>
+						<td><input class="rad" type="email" name="id5" placeholder="   abcd123@email.com"></td>
+						<td></td>
+					</tr>
+					
+				</table>
+			</fieldset><br>
+			
+			<div id="wrap">
+				<input id="b2" type="submit" value="전송" onclick="froc1();">
+				<input id="b3" type="button" value="취소" onclick="reset();">
+			</div>
+		</form>
+		<!-- 
+		1. 입력값(문자열).match(패턴문자/정규식) → 입력값에서 패턴정규식에 맞는 값이 있느냐?
+			있으면 문자열(여러개일 경우 문자열 배열)을 리턴하고 없으면 null을 리턴한다.
+			
+		2. 정규식패턴문자.test(입력문자열) → 입력값에서 패턴정규식에 맞는 값이 있느냐?
+			입력문자열이 정규식에 맞으면 true, 맞지 않으면 false를 리턴한다.
+			
+		3. 정규식패턴문자.exec(입력문자열) → 입력값에서 패턴정규식에 맞는 값이 있느냐?
+			있으면 문자열(여러개일 경우 문자열 배열)을 리턴하고 없으면 null을 리턴한다.
+		 -->
+		
+		
+	</body>
+</html>
+
+
+
+
+
+
+

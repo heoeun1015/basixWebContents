@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>학습자레벨3_문제풀기</title>
+		<script>
+		
+		
+		 function solution(str){
+			var arr = new Array();
+			var cnt = 0;
+			for(var i = 0; i < str.length; i++){
+				arr[i] = str.charAt(i);
+			}for(var i = 0; i < arr.length; i++){
+				if(!(arr.length > 2500 || ('a' <= arr[i] && arr[i] <= 'z'))){
+					return cnt;
+				}
+			}
+				var cen = Math.ceil(arr.length / 2) - 1;
+				for(var j = 0; j <= Math.ceil(arr.length / 2); j++){
+					if(arr[cen - j] == arr[cen + j]){
+						cnt = arr.length;
+					}else{
+						cnt = 0;
+					}
+				}
+			return cnt;
+		} 
+		
+		
+		var str = solution("abvdvba");
+		document.write(str);
+	
+		
+		</script>
+	</head>
+	
+	<body>
+		
+	</body>
+</html>

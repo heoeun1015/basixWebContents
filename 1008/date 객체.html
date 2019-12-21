@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>date 객체</title>
+		<script>
+		
+			var now = new Date();
+			
+			function proc1(){
+				var now2 = new Date(1000000);
+				//1000초가 지난 것(1970년 1월 1일 0시 0분으로부터)
+				var now3 = new Date("2019.10.08");
+				var now4 = new Date(2019,1,1);
+				//month에 해당하는 인수는 0부터(1월) 시작
+				//설정된 월 수보다 1을 크게 값을 얻는다. ex) 07 → 08 월로 표시
+				console.log(now4);
+				
+			}
+			
+			function proc2(){
+				var result = now + "<br>";
+				
+				result += now.toDateString()+"<br>"; //Tue Oct 08 2019
+				result += now.toUTCString()+"<br>"; //Tue, 08 Oct 2019 04:51:08 GMT
+				result += now.toJSON()+"<br>"; //2019-10-08T04:51:08.361Z
+				result += now.toLocaleString()+"<br>"; //2019. 10. 8. 오후 1:51:08
+				result += now.toDateString()+"<br>"; //Tue Oct 08 2019
+				result += now.toLocaleTimeString() //오후 1:51:08
+				
+				document.getElementById("res").innerHTML = result;
+			}
+			
+			
+			
+			function proc3(){
+				var day = now.getDay(); //요일.
+				//0 ~ 6 (0은 일요일 6은 토요일)
+				console.log(day); 
+				
+				//위의 숫자값을 요일로 변환하세요. ex)오늘은 화요일입니다.
+				//출력은 1군데서만(case 에 변수를 활용해서 넣어주세요.)
+				
+				var day_2 = "";
+				
+				switch(day){
+				case 0: day_2 = "일"; break;
+				case 1: day_2 = "월"; break;
+				case 2: day_2 = "화"; break;
+				case 3: day_2 = "수"; break;
+				case 4: day_2 = "목"; break;
+				case 5: day_2 = "금"; break;
+				case 6: day_2 = "토"; break;
+				}
+				
+				console.log("오늘은 " + day_2 + "요일입니다.");
+				
+
+				//많이 쓰인다!
+				var days = ["일요일","월요일","화요일","수요일","목요일","금요일","토요일"];
+				
+				console.log("오늘은 " + days[day] + "입니다.");
+				
+			}
+
+
+			function proc4(){
+				
+				console.log("오늘 날짜: " + now.getDate());
+				console.log("오늘 월(+1)이번 달이 10월이면 9의 값을 가져온다 : " + now.getMonth());
+				console.log("오늘 연도: " + now.getFullYear()); //getYear은 1900년도까지만.
+				console.log("오늘 시간(0 ~ 23): " + now.getHours());
+				console.log("오늘 분(0 ~ 59): " + now.getMinutes());
+				console.log("오늘 초(0 ~ 59): " + now.getSeconds());
+				
+				console.log("오늘의 밀리세컨드(0 ~ 999): " + now.getMilliseconds());
+				console.log("오늘의 경과시간(밀리세컨드 단위), 기준은 1970년 1월 1일: " + now.getTime());
+				
+			}
+			
+			
+			// 내가 태어난 날이 오늘까지 몇 일인지, 몇 년 지났는지 계산하세요.
+			// ex) 3060일 지났습니다.
+			
+			function proc5(){
+				
+				var now1 = new Date();
+				var now2 = new Date("1998.10.15");
+				
+				var age = now1.getTime() - now2.getTime();
+				
+				var year_1 = (age/1000/60/60/24) + 1
+				
+				console.log(parseInt(year_1) + "일 지났습니다.");
+				console.log(parseInt(year_1 / 365) + 1 + "년 지났습니다.");
+				
+			}
+			
+			
+			// 오늘부터 100일이 지난 날은 언제인지 출력하세요.
+			// 100일 더한 밀리세컨드.
+			function proc6(){
+				
+				var today = new Date();
+				var _100day = new Date(today.getTime() + (100/*100일 이니까*/ * 24 * 3600 * 1000));
+				//오늘까지의 밀리세컨드 + 100일 밀리세컨드
+				console.log(_100day);
+				
+			}
+			
+			function proc7(){
+				
+				var selDate = document.getElementById("pdate").value; //단순 텍스트
+				selDate = new Date(selDate); //날짜를 객체화시킨 것.
+				console.log(selDate); //String으로 가져온 것
+				
+				var today = new Date();
+				
+				// 오늘(2019/10/8) 기준으로 환불일이 7일 이내의 것만 가능하다.
+				// 구입한 날을 셀렉트하여 환불이 가능한지 아닌지 확인하세요.
+				// 날짜(2019년 10월 2일 ~ 10월 8일까지): 환불이 가능합니다.
+				// 이외의 날짜는 "환불이 불가능합니다."
+				// 오늘 이후의 날짜를 셀렉하면 "다시 선택해주세요."
+				// 텍스트는 innerHTML로 출력해주세요.
+				
+				
+				var today = new Date();
+				
+				var refund = today - (7 * 24 * 60 * 60 * 1000);
+// 				console.log(refund);
+// 				console.log(today);
+				
+// 				var a = "환불이 불가능합니다.";
+// 				var b = "다시 선택해주세요.";
+// 				var c = "환불이 가능합니다.";
+	
+				var ment = "";
+				
+				if(refund > selDate){
+// 					document.getElementById("refund_1").innerHTML = a;
+					ment = "환불이 불가능합니다.";
+				}else if(today < selDate){
+// 					document.getElementById("refund_1").innerHTML = b;
+					ment = "다시 선택해주세요.";
+				}else if(refund <= selDate && today >= selDate){
+// 					document.getElementById("refund_1").innerHTML = c;
+					ment = "환불이 가능합니다.";
+				}else{
+// 					document.getElementById("refund_1").innerHTML = "";
+					ment = "";
+				}
+				
+				document.getElementById("refund_1").innerHTML = ment;
+				
+			}
+			
+			
+			window.onload = function(){ //onload는 보통 여러 군데를 생성하지 않고 한 군데에만 있다.
+				proc1();
+			}
+		
+			
+		</script>
+	</head>
+	
+	<body>
+		<!-- <div id = "res"></div> -->
+		<input type="date" id="pdate">
+		<button type="button" onclick="proc7();">환불</button>
+		<h2 id="refund_1"></h1>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+

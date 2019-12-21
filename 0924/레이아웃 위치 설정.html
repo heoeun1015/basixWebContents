@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>레이아웃 위치 설정</title>
+		<style>
+		
+			div{
+				/* position: static; */
+				width: 200px;
+				height: 150px;
+				border: 1px solid blue;
+				margin: 10px;
+				padding: 10px;
+			}
+			
+			/* #d2{
+				position: absolute;
+				top: 60px;
+				left: 50px; 
+			}
+			#d3{
+				position: absolute;
+				right: 0; 
+				
+			} */
+			
+			
+			
+			/* #d2{
+				background-color: yellow;
+				position: relative;
+				top: 20px;
+				left: 50px;
+			}
+			#d3{
+				background-color: red;
+				position: relative;
+				top: -30px;
+				left: 50px;
+				z-index: -1;
+			} */
+			
+			
+			#d2{
+				position: fixed;
+				top: 100px;
+				right: 50px;
+			}
+			#d2:before{
+				content: "재미있어요";
+				color: red;
+			}
+			
+					
+		</style>
+	</head>
+	
+	<body>
+		<pre>
+
+static position은 정상적인 흐름에 의한 배치
+absolute position은 컨테이너를 기준으로 배치한다
+(보통은 body 태그를 기준으로 배치)
+
+	relative position은 정상적인 흐름에 의한 배치를 기준으로 재배치된다.
+	기존에 static 위치를 기준으로 top, right, left, bottom 방향으로 주어진 픽셀만큼 이동한다.
+	(보통 태그는 같은 position이면 나중에 나온 태그가 더 위에 배치된다.)
+	z-index 값을 통해서 순서 조절이 가능하다.
+
+fixed position은 윈도우 원점을 기준으로 재배치
+스크롤바를 움직여도 화명에서 고정되어 있다.
+		
+		</pre>
+		<div>1</div>
+		<div id="d2">2</div>
+		<div id="d3">3</div>
+		<div>4</div>
+		<div>4</div>
+		<div>4</div>
+		<div>4</div>
+		<div>4</div>
+		<div>4</div>
+		<div>4</div>
+		<div>4</div>
+		<div>4</div>
+		<div>4</div>
+		<div>4</div>
+		<div>4</div>
+		<div>4</div>
+		<div>4</div>
+		<div>4</div>
+		<div>4</div>
+		<div>4</div>
+		<div>4</div>
+		<div>4</div>
+		<div>4</div>
+		<div>4</div>
+		<div>4</div>
+		<div>4</div>
+		<div>4</div>
+		<div>4</div>
+		
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

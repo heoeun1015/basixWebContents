@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>result</title>
+		<script>
+			var href= window.location.href;
+			var querystring = href.split('?');
+			var params = querystring[1].split('&');
+			
+			var size = params.length;
+			
+			for(var i=0; i<size; i++){
+				var param = params[i].split('=');
+				document.write(param[0]+":"+param[1]+"<br>");
+				
+				
+				
+			}
+		
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

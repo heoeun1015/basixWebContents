@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>덧셈예제</title>
+		<script>
+/* 				function calc(n){
+					var x = document.getElementById("x").value;
+					var y = document.getElementById("y").value;
+					
+					var sum, minus;
+					sum = (x * 1 + y * 1);
+					
+					document.getElementById("sum").value = sum;	//sum 이라는 곳에 sum; 값을 넣어준다.
+				}
+				
+				function calm(){
+					var x = document.getElementById("x").value;
+					var y = document.getElementById("y").value;
+					
+					var minus;
+					minus = (x * 1 - y * 1);
+					
+					document.getElementById("minus").value = minus; */
+					
+					
+					
+					function calc(n){
+						var x = document.getElementById("x").value;
+						var y = document.getElementById("y").value;
+						
+						var sum, minus, multiple, divide;
+						
+						if(n == 1){
+							sum = (x * 1 + y * 1);
+							document.getElementById("sum").value = sum;	
+						}else if(n == 2){
+							minus = (x * 1 - y * 1);
+							document.getElementById("minus").value = minus;
+						}else if(n == 3){
+							multiple = x * y; //곱하기는 자동 int 로 변환된다.
+							document.getElementById("multiple").value = multiple;
+						}else if(n == 4){
+							divide = parseInt(x / y); //소수점을 버리고 정수로 바꾼다.
+							document.getElementById("divide").value = divide;
+						}
+						
+					}
+
+		
+		</script>
+	</head>
+	
+	<body>
+		<form>
+			x: <input type = "text" id = "x"><br>
+			y: <input type = "text" id = "y"><br>
+			<input type = "button" value = "덧셈 계산" onclick="calc(1);">
+			합계: <input type = "text" id = "sum"><br>
+			
+			<input type = "button" value = "마이너스 계산" onclick="calc(2);">
+			마이너스 합계: <input type = "text" id = "minus"><br>
+			
+			<input type = "button" value = "곱셈 계산" onclick="calc(3);">
+			곱하기 합계: <input type = "text" id = "multiple"><br>
+			
+			<input type = "button" value = "나눗셈 계산" onclick="calc(4);">
+			곱하기 합계: <input type = "text" id = "divide"><br>
+					
+		
+		</form>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

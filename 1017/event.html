@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>event</title>
+		<script>
+		
+			function chColor(color){
+				document.body.style.backgroundColor = color;
+			}
+		
+			function chStr(){
+				var txt = document.getElementById("str").value;
+				document.getElementById("str").value = txt.toUpperCase();
+			}
+			
+			function OnMDown(e){
+				e.style.backgroundColor = "red";
+			}//마우스 커서로 눌렀을 때
+			
+			function OnMUp(e){
+				e.style.border = "2px dashed red";
+			}//마우스 커서를 뗐을 때
+			
+		</script>
+	</head>
+	
+	<body>
+		<h1>이벤트 처리</h1>
+		<form method="post">
+			<input type="radio" name="C1" value="v1" onclick="chColor('lightblue')">파란색<br>
+			<input type="radio" name="C1" value="v2" onclick="chColor('lightgreen')">녹색
+		</form>
+		
+		
+		<div>
+			<h2>onchange 이벤트</h2> <!-- 굉장히 많이 쓰인다. -->
+			영어단어: <input type="text" id="str" onchange="chStr()"><!-- onchange 커서가 밖으로 나갈 때 -->
+			<p>입력 필드를 벗어나면 소문자로 변경(onchange 실행)</p>
+		</div>
+		
+		<div>
+			<button onmousedown="OnMDown(this);" >onmouseDown 눌러보세요.</button>
+			<button onmouseup="OnMUp(this);" >onmouseUP 눌러보세요.</button>
+		
+		</div>
+		
+		
+	</body>
+</html>

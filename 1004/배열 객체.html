@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>배열 객체</title>
+		<script>
+		
+			var str = new Array();
+			str = ["이정은","이선욱","조건희","최효은"];
+			str2 = ["김영호","박희제","현솔비"];
+
+			/* 
+			
+//			var str = ["이정은","이선욱","조건희","최효은"]; //이렇게 써도 배열 가능. 보기 편하기 위해 위처럼 쓴다.
+
+
+
+
+
+
+			function index(){
+	
+				var vname = prompt("이름을 입력해주세요.");
+				return str.indexOf(vname);
+//				document.write(str.indexOf(vname)); //이렇게 써도 가능.
+	
+			}
+			
+			
+			
+			
+			
+			function lastIdx(){
+				
+				var vname = prompt("이름을 입력해주세요."); //이름만 같고 위 함수와는 다르다.
+				
+				return str.lastIndexOf(vname, 1); //뒤에서부터 찾는다.
+				
+			}
+			
+			var idx = lastIdx(); //호출
+			document.write(idx);
+			
+			 */
+			
+			 
+			 
+			 
+			 
+			 
+			 
+			/* 
+			function pushArr(){
+				
+				str.push("김혜정");
+// 				str.pop();
+// 				str.pop();
+
+//				str.shift();
+				//pop과는 반대로 앞쪽을 떼어냄.
+				//사용하면 stack에서 오류가 일어날 수 있음. 코딩 땐 상관이 없는데 알고리즘 구조가 아래서부터 완전히 바뀐다.
+				//메모리 누수가 생긴다. 처음 데이터가 사라지면 앞자리로 당겨지면서 모든 코드에 에러가 낢.
+				//사용을 하려면 call 인지 stack 인지 확인해봐야 한다.
+				
+				str.unshift("이정은");
+				return str;
+				
+			}
+			
+			document.write(pushArr()); //함수 호출하는 것 자체를 document로 찍었다.
+			  */
+			 
+			  
+			  
+			  
+			  
+			  
+			  
+			  /* 
+			 function reverseArr(){ //배열을 거꾸로 뒤집는다.
+				 
+				 str.reverse();
+				 
+				 return str;
+				 
+			 }
+			
+			document.write(reverseArr());
+			 */
+		
+			
+			 
+			 
+			 
+			 
+			
+			/* 
+			function sortArr(){
+				
+				return str;
+				
+			}	
+			
+			document.write(sortArr());
+			 */
+			
+			
+			 
+			 
+			 
+			 
+			
+			/* 
+			function joinArr(){
+				
+				str = str.join("*");
+				return str;
+				
+			}
+			
+			
+			document.write(joinArr());
+			 */
+			
+			 
+			 
+			 
+			 
+			 
+			
+			 /* 
+			 function concatArr(){
+				 
+//				 return str.concat(str2);
+				 
+				 str2 = str2.concat(str); //합친 데이터를 다시 넣어준 것.
+				 str2.pop();
+				 
+				 return str2;
+				 
+			 }
+			 
+			 document.write(concatArr());
+			  */
+			 
+			 
+			 
+			  
+			 function sliceArr(){
+//				  str = ["이정은","이선욱","조건희","최효은"];
+				  str = str.slice(1, 2);
+				  //1 이상 2 미만을 자른다.
+				  return str;
+				  
+			  }
+			 
+			  document.write(sliceArr());
+			 
+			 
+			 
+			 
+		</script>
+	</head>
+	
+	<body>
+	
+		<h1> indexOf </h1>
+			<p> 앞에서부터 찾는다. (배열의 순서) </p>
+		<h1> lastIndexOf </h1>
+			<p> 뒤에서부터 찾는다. (배열의 순서) </p>
+		
+		
+		<h1> push </h1>
+			<p> 배열의 맨 뒤에 넣는다. </p>
+		<h1> pop </h1>
+			<p> 배열의 맨 뒤에 요소를 뺀다. </p>
+		
+		
+		<h1> sort </h1>
+			<p> 기본 sort는 오름차순
+				만약, 숫자 오름차순을 원할 경우는 함수를 반드시 사용한다.
+				function(a,b){return a-b;} </p>
+		
+		
+		<h1> concat </h1>
+			<p> 두 개의 배열을 결합해서 한 개의 배열로 생성
+				배열1 + 배열2 = 새로운 배열 </p>
+			
+			
+		<h1> join </h1>
+			<p> 배열 + 문자열로 변환
+				기본은 ,로 생성되지만 원하는 문자열로 구분자를 생성 </p>
+		
+		
+		<h1> slice </h1>
+			<p> 배열의 index로 요소를 자름 ((1,3)의 경우 3미만까지만 적용) </p>	
+		
+		
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

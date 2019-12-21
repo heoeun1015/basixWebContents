@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Array</title>
+		<script>
+			/*
+				지역변수
+				- 함수 안에서만 사용 가능
+				- 함수 안에서 선언된 변수
+				- 다른 함수에서도 똑같은 이름으로 사용 가능
+				- 함수가 종료되면 자동적으로 소멸한다.
+				
+				전역변수
+				- 함수 외부에서 선언된 변수
+				- 웹 페이지 상의 모든 스크립트와 모든 함수는 전역변수를 사용할 수 있다.
+				- 사용자가 웹페이지를 닫으면 소멸된다.
+			
+			*/
+		
+		
+			
+			
+				//★ 함수 하나를 생성한 후 (함수명: call) 함수 안에서 prompt로 자기 이름, 나이를 입력받아
+				//배열 안에 넣고 출력하세요.
+			
+		/* 
+				var input_1 = prompt("이름을 입력하세요.");
+				var input_2 = prompt("나이를 입력하세요.");
+				
+				var arr = new Array(); //전역변수
+				arr[0] = input_1;
+				arr[1] = input_2;
+				
+				
+			function call(){
+				var arr = new Array(); //같은 이름으로 선언하면 실행되는 지역변수가 우선된다.
+				
+				arr[0] = "오동규";
+				arr[1] = 25;
+				document.write(arr); 
+				//함수 바깥에 있는 arr과 다르다. (지역변수)
+			}
+			 */
+			
+		/* 
+			function fun(name, age){//name: 인자값. var가 있는데 생략된 느낌이다.
+				/* document.write(name + ", " + age); 
+				
+				
+				//배열에 넣을 것
+				
+				var arr = new Array();
+				arr[0] = name; //문자열
+				arr[1] = " ";
+				arr[2] = age; //숫자형
+				
+				document.write(arr);
+				
+			}
+			 */
+			
+			 
+			 //★ 덧셈, 뺄셈, 곱셈, 나눗셈 함수를 각각 만들고 버튼 호출을 각각 하여 계산하세요.
+			 
+			 /* 
+			 function add(){
+				 var txtA = document.getElementById("txtA").value;
+				 var txtB = document.getElementById("txtB").value;
+				 
+				 var add; 
+				 add = parseInt(txtA) + parseInt(txtB);
+				 
+				 document.write(add);
+			 }
+			 function minus(){
+				 var txtA = document.getElementById("txtA").value;
+				 var txtB = document.getElementById("txtB").value;
+				 
+				 var minus; 
+				 minus = parseInt(txtA) - parseInt(txtB);
+				 
+				 document.write(minus);
+			 }
+			 function multiple(){
+				 var txtA = document.getElementById("txtA").value;
+				 var txtB = document.getElementById("txtB").value;
+				 
+				 var multiple; 
+				 multiple = parseInt(txtA) * parseInt(txtB);
+				 
+				 document.write(multiple);
+			 }
+			 function divide(){
+				 var txtA = document.getElementById("txtA").value;
+				 var txtB = document.getElementById("txtB").value;
+				 
+				 var divide; 
+				 divide = parseInt(txtA) / parseInt(txtB);
+				 
+				 document.write(divide);
+			 }
+			 
+			 
+			 
+			 function calc(n){
+				 var txtA = document.getElementById("txtA").value;
+				 var txtB = document.getElementById("txtB").value;
+				 
+				 var add, minus, multiple, divide; 
+				 divide = parseInt(txtA) / parseInt(txtB);
+				 
+				 document.write(divide);
+			 }
+			 
+			  */
+			 
+			  /* 
+			  function add(){
+				  
+				  var a = document.getElementById("txtA").value;
+				  var b = document.getElementById("txtB").value;
+				  
+				  document.write(parseInt(a) + parseInt(b));
+				  
+				  
+			  }
+			   */
+			  
+			  
+			  function cal(str){
+				  
+				  var a = document.getElementById("txtA").value;
+				  var b = document.getElementById("txtB").value;
+				  
+				  if(str == "add"){
+					  document.write(parseInt(a) + parseInt(b));
+				  }else if(str == "minus"){
+					  document.write(parseInt(a) - parseInt(b));
+				  }else if(str == "multiple"){
+					  document.write(parseInt(a) * parseInt(b));
+				  }else if(str == "divide")
+					  document.write(parseInt(a) / parseInt(b));
+			  }
+			 
+			 
+		
+		</script>
+	</head>
+	
+	<body>
+		<!-- <button value="눌러라" onclick="fun('최효은', 22);">눌러주세요.</button> -->
+		<!-- <button value="입력" onclick="call();">눌러주세요.</button> -->
+		
+		<input type="text" id="txtA" size="20"><br>
+		<input type="text" id="txtB" size="20"><br><br>
+		<!-- 
+		<button value="add" onclick="add();">덧셈</button>
+		<button value="minus" onclick="minus();">뺄셈</button>
+		<button value="multiple" onclick="multiple();">곱셈</button>
+		<button value="divide" onclick="divide();">나눗셈</button>
+		 -->
+		
+		<button value="add" onclick="cal('add');">덧셈</button> <!-- 작은 따옴표! -->
+		<button value="minus" onclick="cal('minus');">뺄셈</button>
+		<button value="multiple" onclick="cal('multiple');">곱셈</button>
+		<button value="divide" onclick="cal('devide');">나눗셈</button>
+		
+		
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

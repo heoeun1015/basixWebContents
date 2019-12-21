@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>DOM 객체</title>
+		<style>
+		img{
+			width: 200px;
+			height: 200px;
+		}
+		</style>
+		<script>
+		</script>
+	</head>
+	
+	<body onload='flash();'>
+		<!-- <ul>
+			<li>list item 1</li>
+			<li>list item 2</li>
+			<li>list item 3</li>
+			<li>list item 4</li>
+			<li>list item 5</li>
+		</ul> -->
+		 
+		<div id="target" onclick="addText('까꿍');">여기를 클릭하세요.</div>
+		<div id="target2">
+			<p id="p1">첫 번째 단락</p>
+			<p id="p2">두 번째 단락</p>
+			<p id="p3">세 번째 단락</p>
+		</div>
+		<button onclick="removeNode();">삭제 하려면 누르세요!</button>
+		 
+		
+		
+		<!-- 이미지 5개를 생성해서 그 이미지를 클릭하면 해당 이미지가 삭제되도록 프로그래밍하세요. -->
+		
+		<!-- 
+		<div id="target3">
+			<img id="i1" onclick="removeNode_2(this);" src="../img/호랑이.jpg"><br>
+			<img id="i2" onclick="removeNode_2(this);" src="../img/구름.jpg"><br>
+			<img id="i3" onclick="removeNode_2(this);" src="../img/식품.jpg"><br>
+			<img id="i4" onclick="removeNode_2(this);" src="../img/커피.jpg"><br>
+			<img id="i5" onclick="removeNode_2(this);" src="../img/컴퓨터.jpg"><br>
+		</div>
+		 -->
+		 
+		
+		<!-- 이미지 5개를 1초마다 하나씩 보이게 프로그래밍 해주세요.
+			디폴트로 1개 이미지만 보이고, 1초마다 이미지가 바뀌게 만들어주세요.
+			중지 버튼을 만들어서 중지할 수 있게끔 -->
+		
+		
+		<div><img id="o1" onclick="changeImg();" src="../img/커피.jpg"></div><br>		 
+		<button onclick="stop();">중지</button>
+
+		
+		<script>
+// 			var list = document.getElementsByTagName("ul")[0]; //ul 태그를 찾아서 (여러개 있을 때 인덱스 번호)
+// 			var allItems = list.getElementsByTagName("li"); //ul리스트에서 li에 대한 태그를 넣어줌
+			
+// 			for(var i = 0; i < allItems.length; i++){
+// 				alert(allItems[i].firstChild.data); //태그 있음 안 가져오고 순수 데이터(텍스트)만 가져온다.
+// 			}
+
+
+// 			function addText(str){
+// 				var node = document.createTextNode(str); //문자열을 감싸안는다.
+// 				document.getElementById("target").appendChild(node); //하위노드에 붙인다.
+// 			}
+			
+			function removeNode(){
+				var parent = document.getElementById("target2");
+				var child = document.getElementById("p2");
+				
+				parent.removeChild(child); //내장객체. p2라는 녀석을 찾아 없애라.
+			}
+			
+			
+// 			function removeNode_2(ele){
+// 				var parent = document.getElementById("target3");
+// 				var child = document.getElementById(ele.id);
+				
+// 				parent.removeChild(child);
+// 			}
+
+		
+			function flash(){
+				id = setInterval(changeImg, 1000);
+			}
+			
+			var i = 0;
+			
+			function changeImg(){
+				imgArr = ["컴퓨터.jpg","식품.jpg","호랑이.jpg","구름.jpg","커피.jpg"];
+				document.getElementById("o1").src ="../img/" + imgArr[i];
+				
+				if(i > 3){
+					i = 0;
+				}else{
+					i++;
+				}
+			}
+			
+			
+			
+			function stop(){
+				clearInterval(id);
+			}
+			
+			
+			
+			
+		
+		</script>
+	</body>
+</html>

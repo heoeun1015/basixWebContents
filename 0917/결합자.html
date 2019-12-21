@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>자손, 자식, 형제 결합자</title>
+		<style>
+			/* s1 s2: s1요소에 포함된 s2요소를 선택한다 (후손관계). */
+			body em  { color:red; }
+			/* s1 > s2: s1요소의 직계 자식 요소인 s2를 선택한다(자식관계). */
+			body > h1 { color:blue; }
+			
+			body > em { color:green; }
+		
+		</style>
+	</head>
+	<body>
+		<em>이건 바로 밑에 있는 em</em>
+		<h1>This is headline.<em>강조합니다.</em></h1>
+	</body>
+</html>

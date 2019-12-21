@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../css/mycss.css">
+<style>
+img{
+	width:200px;
+	height:200px;
+	border-radius:200px;
+	margin-right:5px;
+}
+.box div{min-height:150px;}
+</style>
+<script>
+	function goPage(){
+		event.preventDefault(); //고유의 이벤트 내용을 실행하지 않도록 하기위한 메서드
+	}
+	function dragOver(event){
+		event.preventDefault(); 
+	}
+	function dragStart(event){
+		//이벤트 대상
+// 		alert(event.target.id);
+// 		event.target.tagName;
+		event.dataTransfer.setData("target_img",event.target.id);
+	}
+	function dropEvent(event){
+		imgid = event.dataTransfer.getData("target_img");
+		
+		//event.target 해당이벤트가 발생하는 target태그를 반환한다.
+// 		alert(event.target.tagName); 
+// 		event.target.appendChild(document.getElementById(imgid));
+		
+		//===========================================================
+		
+		//이미지위에 다른 이미지를 drop하면 
+		//event.target이 div가 아니고 img가 되어 이미지가 > 이미지 밑으로 간다..
+		//이를 방지하기 위해서 이미지 위에 다른 이미지를 drop하더라도
+		//event.ratget 을 div로 바꾸어준다
+		if(event.target.tagName == "IMG"){
+			event.target.parentNode.appendChild(document.getElementById(imgid));
+		}else{
+			event.target.appendChild(document.getElementById(imgid));
+		}
+	}
+</script>
+</head>
+<body ondrop="dropEvent(event)" ondragover="dragOver(event)">
+<h1>Drag Drop</h1>
+<div class="box" ondrop="dropEvent(event)" ondragover="dragOver(event)">
+	<h2>원하는 물건을 끌어서 옮겨주세요.</h2>
+	<a onclick="goPage()" href="http://www.naver.com">네이버 event.preventDefault(); //고유의 이벤트 내용을 실행하지 않도록 하기위한 메서드</a>
+	<div id="result" ondrop="dropEvent(event)" ondragover="dragOver(event)"></div>
+	<br>
+	<img id="img1" src="../img/가구.jpg" draggable="true" ondragstart="dragStart(event)">
+	<img id="img2" src="../img/옷.jpg" draggable="true" ondragstart="dragStart(event)">
+	<img id="img3" src="../img/식품.jpg" draggable="true" ondragstart="dragStart(event)">
+	<img id="img4" src="../img/옷2.jpg" draggable="true" ondragstart="dragStart(event)">
+</div>
+</body>
+</html>

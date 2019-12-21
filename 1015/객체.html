@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>객체</title>
+		<script>
+		/* 
+			var person = { //person 객체 생성
+					
+				firstName :"John",
+				lastName: "Doe",
+				age: 20,
+				money: 1000000,
+				walk: function(){
+					return 10;
+				}
+			};
+			
+			var today = new Date();
+			today.getFullYear();
+			
+
+			window.onload = function(){
+				document.getElementById("result").innerHTML =
+					person.firstName + ", " + person.lastName + ", " + person.age + ", "
+					+ person.money + ", " + person.walk();
+			}
+			 */
+			
+			
+			
+			
+			
+			
+			function Car(model, speed, color){
+				this.model = model;
+				this.speed= speed;
+				this.color = color;
+				this.brake = function(){
+					this.speed -= 10;
+				}
+				this.accel = function(){
+					this.speed += 10;
+				}
+			}
+			
+			
+			var myCar = new Car("520d", 60, "red");
+			document.write("모델: " + myCar.model + "<br>");
+			document.write("속도: " + myCar.speed+ "<br>");
+			document.write("색상: " + myCar.color + "<br>");
+			myCar.brake();
+			document.write("속도: " + myCar.speed + "<br>");
+			myCar.brake();
+			document.write("속도: " + myCar.speed + "<br>");
+			myCar.accel();
+			document.write("속도: " + myCar.speed + "<br><br>");
+			
+			
+			
+			
+			
+			
+			//person 객체 만들기 인수는 4개 (firstName, lastName, age, money)
+			function person(firstName, lastName, age, money){ //클래스 개념
+				//하나씩 속성으로 세팅하기
+					this.firstName = firstName;
+					this.lastName = lastName;
+					this.age = age;
+					this.money = money;
+			}
+			
+			//person 객체 생성하기
+			
+			var person_1 = new person("효은","최",22,"100원");
+			
+			//person 객체 생성해서 호출 후 출력하기
+			
+			document.write("이름: " + person_1.firstName + "<br>");
+			document.write("성: " + person_1.lastName + "<br>");
+			document.write("나이: " + person_1.age + "<br>");
+			document.write("소지금액: " + person_1.money+ "<br><br>");
+			
+			
+			
+			//객체를 하나 생성해서 맛집리스트를 찾아갈 것입니다.
+			//인수는 1) 맛집이름, 2)위치, 3)전화번호,
+			//4) 지금 있는 곳에서부터 그곳까지의 거리(함수 - 메서드)/ 맛집 좌표(임의의 100km)
+			
+			
+			function fr(frName, frPosition, frNumber, distance){
+				this.frName = frName;
+				this.frPosition = frPosition;
+				this.frNumber = frNumber;
+				this.distance = function(){
+					return distance;
+				}
+			}
+			
+			
+			var fr_2 = new fr("등촌샤브샤브","대전 유성구 궁동로18번길 40 2층","042-826-9097","10km");
+			
+			document.write("맛집이름: " + fr_2.frName + "<br>");
+			document.write("위치: " + fr_2.frPosition + "<br>");
+			document.write("전화번호: " + fr_2.frNumber + "<br>");
+			document.write("거리: " + fr_2.distance() + "<br>");
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		
+		</script>
+	</head>
+	
+	<body>
+		<p id="result"></p>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>BOM(browser object model)</title>
+		<script>
+		
+		
+		//window.open
+		function openPopup(){
+			window.open("http://naver.com","_blank","width=200, hight=200");
+			//width, hight 는 인수. ',' 로 구분한다.
+		}
+		
+		
+		//setTimeout
+		function showAlert(){
+			setTimeout(function(){
+//				alert("setTimeout을 이용하여 표시합니다.");
+				window.open("http://naver.com","_blank","width=200, hight=200");
+			}, 3000); //밀리세컨드라 3000을 적어준다.
+		}
+		
+		var id = 0;
+		
+		function changeColor(){
+			id = setInterval(flashText,1000); //1초마다 변경하는 구문
+		}
+		 
+		function flashText(){
+			var elem = document.getElementById('target');
+			elem.style.color = (elem.style.color == "red") ? "blue" : "red";
+			elem.style.backgroundColor = (elem.style.backgroundColor == "green") ? "yellow" : "green";
+		}
+		 
+		function stop(){
+			clearInterval(id);
+		}
+		
+		
+		/* 
+		문제1. 1초마다 브라우저 배경색이 랜덤으로 바뀌는 함수를 작성하세요.
+		
+		case1) 배경색 바뀜
+		case2) 랜덤으로 바뀌어야 함
+				var red = 0, green = 0, blue = 0; //0 ~ 255(10진수로 표현했을 때)
+				#000000 → "#" + red.toString(16) + green.toString(16) + blue.toString(16); 
+		 */
+		
+		
+		 function flashText(){
+				 var red = Math.floor(Math.random() * 255 + 1);
+				 var green = Math.floor(Math.random() * 255 + 1);
+				 var blue = Math.floor(Math.random() * 255 + 1);
+			 
+				var elem = document.body;
+				elem.style.backgroundColor = "#" + red.toString(16) + green.toString(16) + blue.toString(16);
+			}
+		 
+		
+		</script>
+	</head>
+	
+	<body onload='changeColor();'> <!-- window.onload 와 같다. -->
+		<!-- <input type="button" value="창열기" onclick='openPopup();'> -->
+		<!-- <p>버튼을 누르면 3초 후에 경고 박스가 화면에 표시됩니다.</p>
+		<button onclick='showAlert();'>눌러보세요.</button> -->
+		<div id="target">
+			<p> This is a Text. </p>
+		</div>
+		<p> This is a Text. </p>
+		<button onclick='stop();'>중지</button>
+	</body>
+</html>

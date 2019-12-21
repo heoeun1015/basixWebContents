@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>자바스크립트 객체</title>
+		<script>
+		
+		
+			/* (방법 첫 번째)
+			var myCar = {
+					model: "530d",
+					speed: 60,
+					color: "red", 
+					
+					brake: function(){this.speed -= 10;}, //this를 써야 위를 불러온다.
+					accel: function(){this.speed += 10;} //안 쓰면 speed를 그냥 새로 만드는 것.
+			}
+			
+			myCar.color = "yellow";
+			myCar.brake(); //작동을 하는 것(함수)기 때문에 반드시 소괄호가 필요하다.
+			
+			document.write(myCar.speed);
+			 */
+			
+			 
+			 
+			
+			function myCar(model, speed, color){
+//				model = "5"; //이렇게 하면 위 model과 다르다고 인식을 한다.
+//				this.model = model; //위 model 값을 그대로 가져올 수 있다.
+				this.model = "5";
+				this.speed = 0;
+				this.color = "red";
+			}
+			
+			var car = new myCar("520a", 90, "black");
+			
+			document.write(car.speed);
+		
+			
+			
+			
+			
+		</script>
+	</head>
+	
+	<body>
+		
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

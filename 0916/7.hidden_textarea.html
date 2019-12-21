@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+	<meta charset="UTF-8">
+		<title>hidden_textarea</title>
+	</head>
+	<body>
+		<!--사용자가 직접 입력하는 데이터는 아니지만
+			클라이언트 컴퓨터가 서버 컴퓨터로 특정한
+			데이터를 전송하고 싶은 경우 많이 사용
+			
+			화면에는 아무것도 나타나지 않고 사용자가 제출버튼을 누를 때
+			서버로 name과 value가 전송 됨	-->
+			
+		<form action="" name="fm" method="get">
+			이름: <input type="text" name="name"><br>
+			<input type="hidden" name="hidden" value="히든값"><br>
+			
+			<input type="submit" value="제출">
+		</form>
+		<hr>
+		고객의 의견<br>
+		<textarea rows="5" cols="50" name="txtA"></textarea><br><br>
+		
+		
+		<select name="cars">
+			<option value="BMW">BMW</option>
+			<option value="벤츠">벤츠</option>
+			<option value="현대자동차">현대자동차</option>
+			<option value="쉐보레">쉐보레</option>
+		</select>
+		
+		<br><br><br><br>
+		
+		<!-- fieldset -->
+		
+		<form>
+			<fieldset>
+				<legend>인적사항입력</legend>
+				이름: <input type="text" name="name"><br>
+				나이: <input type="text" name="age"><br>
+				전화번호: <input type="tel" name="tel"><br>
+				
+				
+			</fieldset>
+		</form>
+		
+		
+		<br><br><br><br>
+		
+		<form>
+			<!--lable 태그 속성 for를 사용하면 lable input태그의 id속성을 통해 서로 연결할 수 있음 -->
+			<label for="male">남성</label>
+			<input type="radio" name="gender" id="male" value="male"><br>
+			<label for="female">여성</label>
+			<input type="radio" name="gender" id="female" value="female"><br>
+		</form>
+		
+		
+	</body>
+</html>

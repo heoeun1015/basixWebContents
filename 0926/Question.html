@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Question</title>
+		<script>
+			
+	 	
+		
+			// (1)	
+			/* 
+			var sum = 0;
+			
+			for(var i = 1; i <= 10; i++){
+				sum += i;
+			}document.write("1.(for) " + sum);
+			document.write("<br>");
+			
+			
+			sum = 0;
+			var k = 1;
+			while(k <= 10){
+				sum += k;
+				k++;
+			}document.write("1.(while) " + sum);
+			document.write("<br>");
+			
+			
+			sum = 0;
+			k = 1;
+			do{
+				sum += k;
+				k++;
+			}while(k <= 10);
+			document.write("1.(do-while) " + sum);
+			document.write("<br>" + "================" + "<br>");
+			
+			
+			
+			
+			// (2)
+			sum = 0;
+			for(var i = 1; i <= 200; i++){
+								
+				if(i % 2 == 1){
+					continue;
+				}
+				sum += i;
+			}document.write("2.(for) " + sum);
+			document.write("<br>");
+			
+			
+			sum = 0;
+			k = 1;
+			while(k <= 200){
+				k++;
+				if(k % 2 == 0){
+					sum += k;
+				}else{
+					continue;
+				}
+			}document.write("2.(while) " + sum);
+			document.write("<br>");
+			
+			
+			sum = 0;
+			k = 1;
+			do{
+				k++;
+				if(k % 2 == 0){
+					sum += k;
+				}else{
+					continue;
+				}
+			}while(k <= 200);
+			document.write("2.(do-while) " + sum);
+			document.write("<br>" + "================" + "<br>");
+			 */
+			 
+			/* 
+			var msg = "";
+			
+			for(var i = 0; i < 10; i++){
+				
+				if(i == 3){
+					break;
+				}
+				
+				msg += i;
+				
+			}
+			
+			document.write(msg);
+			 */
+			
+			
+			// (3)
+			
+			/*
+			문제1) 5번 for 문 돌아서 합계 구하기
+			문제2) 프롬프트로 횟수를 받고 for문을 그 횟수만큼 돌림 / 그 후 합계 출력
+			*/
+			
+			/* 
+			var input = 0;
+			sum = 0;
+			for(var i = 0; i < 5; i++){
+				input = prompt("값을 입력하세요. ('0': 종료)","공백은 입력할 수 없습니다.");
+				document.write(input);
+			}
+			 */
+			
+			 /* 
+			var input = 0;
+			var sum = 0;
+			for(var i = 0; i < 5; i++){
+				input = prompt("값을 입력하세요.");
+				sum += input*1;
+			}document.write(sum);
+				
+			 */
+			
+			/* 
+			var sum = 0;
+			var input = prompt("돌릴 횟수를 입력해주세요.");
+			for(var i = 0; i < input; i++){
+				var input_2 = prompt("값을 입력하세요.");
+				sum += input_2*1;
+			}document.write(sum);
+				
+				 */
+				
+		
+				
+				
+			// (5)
+			/* 
+			for(var i = 1; i <= 100; i++){
+				if(i % 2 == 0 && i % 3 ==0){
+					document.write(i + "<br>");
+				}
+			}
+		
+			 */
+			 
+			 
+			 
+			 // (6)
+			 // 두 수의 합이 100 이상일 때는 계속 출력하고, 00 이면 빠져나옴.
+			 
+			 	
+			 	var sum = 0;
+			 	var input = 0;
+			 	var input_2 = 0;
+			 
+			 	do{
+				input = prompt("첫 번째 수를 입력해주세요.");
+			 	input_2 = prompt("두 번째 수를 입력해주세요.");
+			 	sum = parseInt(input) + parseInt(input_2);
+			 	
+			 	if(sum >= 100){
+			 		document.write(sum + "<br>");
+			 		continue;
+			 	}else{
+			 		break;
+			 	}
+			 	
+			 	}while(input != 0 && input_2 != 0);
+			 
+			 
+			 
+			 
+		
+		</script>
+	</head>
+	
+	<body>
+
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

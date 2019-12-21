@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>location 객체</title>
+		<script>
+		
+			var res = "";
+			
+			res += "protocol: " + location.protocol + "<br>"; //https://
+			res += "host: " + location.host + "<br>"; //www.w3schools.com
+			res += "hostname: " + location.hostname + "<br>"; //www.w3schools.com. 실제 호출되는 이름
+			res += "port: " + location.port + "<br>"; //
+			res += "pathname: " + location.pathname + "<br>"; //protocol을 제외한 나머지. ? 뒤는 자른다.
+			res += "href: " + location.href + "<br>"; //주소 전체
+			
+			//host / hostname / port 는 서버에서만 나온다.
+			
+			window.onload = function(){
+				document.getElementById('rseult').innerHTML = res;
+			}
+
+			
+			
+			
+		
+		</script>
+	</head>
+	
+	<body>
+		<div id="rseult"></div>
+	</body>
+</html>

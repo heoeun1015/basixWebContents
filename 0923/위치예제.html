@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>위치에제</title>
+		<style>
+			div{
+				width: 100px;
+				height: 100px;
+			}
+			
+			#box1{
+				background-color: yellow; 
+				position: absolute;
+				top: 20px;
+				z-index: 200;
+			}
+			#box2{
+				background-color: blue;
+				position: absolute;
+				top: 40px;
+				left: 80px;
+				z-index: 100; 
+			}
+			#box3{
+				background-color: green;
+				position: absolute;
+				top: 50px;
+				left: 90px;
+				z-index: 0;
+			}
+			
+		</style>
+	</head>
+	
+	<body>
+		<div id="box1"></div>
+		<div id="box2"></div>
+		<div id="box3"></div>
+	</body>
+</html>

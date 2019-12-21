@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>date객체</title>
+		<script>
+		
+			
+			 
+			window.onload = function(){			
+				//document.getElementById("x").innerHTML = "xxxxx";
+				
+				
+				//date()객체
+				var now1 = new Date();
+				var now2 = new Date(10000000000); //0 10개   →   1000 : 1초
+				var now3 = new Date("2000.1.2");
+				var now4 = new Date(2000,1,2,1,20,30); //그리니치 천문대 시작. month만 0부터 시작
+				var now5 = now1.toLocaleString(); 
+				var now6 = now2.toLocaleString(); 
+				var now7 = now3.toLocaleString();
+				var now8 = now4.toLocaleString();
+				
+				document.getElementById("result").innerHTML = now1 + "<br>";
+				//Fri Oct 11 2019 20:33:17 GMT+0900 (한국 표준시)
+				document.getElementById("result").innerHTML += now2 + "<br>";
+				//Mon Apr 27 1970 02:46:40 GMT+0900 (한국 표준시)
+				document.getElementById("result").innerHTML += now3 + "<br>";
+				//Sun Jan 02 2000 00:00:00 GMT+0900 (한국 표준시)
+				document.getElementById("result").innerHTML += now4 + "<br>";
+				//Wed Feb 02 2000 01:20:30 GMT+0900 (한국 표준시)
+				document.getElementById("result").innerHTML += now5 + "<br>";
+				//2019. 10. 11. 오후 8:33:17
+				document.getElementById("result").innerHTML += now6 + "<br>";
+				//1970. 4. 27. 오전 2:46:40
+				document.getElementById("result").innerHTML += now7 + "<br>";
+				//2000. 1. 2. 오전 12:00:00
+				document.getElementById("result").innerHTML += now8 + "<br>";
+				//2000. 2. 2. 오전 1:20:30
+				
+			}
+			 
+			
+			
+			
+			// 2019년 1월 1일부터 오늘까지의 날짜수를 계산하는 프로그램을 작성하세요.
+			// 소수점은 parseInt()를 이용해서 버린다.
+			
+			
+				var now1 = new Date();
+				var now2 = new Date("2010.1.1");
+				
+				var day1 = parseInt((now1 - now2) / 86400000);
+				
+				document.write(day1 + "일");
+ 				
+				
+				
+				
+				var x = now1.getTime() - now2.getTime();
+				console.log(x/1000/60/60/24);
+				
+				
+				
+// 				document.getElementById("result").innerHTML = day;
+// 				document.write(day);
+			
+			
+			
+			 
+			// 윤년의 조건:
+			// 1. 년도가 4로 나누어 떨어지면서 100으로 나누어 떨어지지 않는 년도
+			// 2. 400으로 나누어 떨어지는 년도
+			
+			
+			
+			
+		
+		</script>
+	</head>
+	
+	<body>
+		
+		<div id="result"></div>
+	
+	
+<!-- 		<p id="x"></p> -->
+		<script>
+//			document.getElementById("X").innerHTML = "hrml 문구 넣기";
+		</script>
+	</body>
+</html>

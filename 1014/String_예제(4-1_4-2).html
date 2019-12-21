@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>주민번호 문제</title>
+		<script>
+		
+
+		 /* 
+		 문제 4-1. 주민번호를 입력받아 생년월일과 성별을 출력하는 프로그램을 작성하세요.
+		 (입력은 prompt로 받는다.)
+		 
+		 ex) 주민번호를 110326-4432618로 입력받은 경우
+		 (1, 2 는 1900년대생, 3, 4는 2000년대생)
+		 	생일: 2011년 3월 26일
+		 	성별: 여자
+		 	
+		 	9810152384813
+		  */
+		 
+		  
+		  
+		 var result = "";
+		 var input = prompt("주민등록번호를 입력해주세요.");
+
+		 if(input.charAt(6) == 1 || input.charAt(6) == 2){
+			 result += "생일: 19" + input.substring(0, 2) + "년 ";
+		 }else{
+			 result += "생일: 20" + input.substring(0, 2) + "년 ";
+		 }
+		 
+		 result += input.substring(2, 4) + "월 ";
+		 result += input.substring(4, 6) + "일<br>";
+		 
+		 input = input.charAt(6);
+		 
+		 if(input == 1 || input == 3){
+			result += "성별: 남자"; 
+		 }else if(input == 2 || input == 4){
+			 result += "성별: 여자";
+		 }else{
+			 result += "확인불가";
+		 }
+		  
+		 result += "<br>--------------------------<br>";
+		 
+		 
+		 
+		 
+		 /* 
+		 문제 4-2. 주민번호를 입력받아 주민번호의 유효성을 검사하는 프로그램을 작성하세요.
+		 (입력은 prompt로 받는다.)
+		 → 반드시 함수를 사용하기(return 구문 사용)
+		 
+		 주민번호: ABCDEF-GHIJKLM
+		 1. A*2 + B*3 + C*4 + ... + H*9 + I*2 + ... + L*5
+		 2. 1번의 합을 11로 나눈 나머지를 구한다.
+		 3. 11에서 2번의 결과를 뺀다.
+		 4. 3번의 결과가 0~9라면 값 그대로, 10이면 0, 11이면 1로 반환
+		 5. 4번의 결과와 M자리의 값이 같으면 맞는 번호이다.
+		  */
+		 
+		  var result_1 = "";
+		 
+		 
+		 function proc1(){
+			 
+			 var n = 2, sum = 0, result2 = 0;
+			 
+			 for(var i = 0; i < input.length - 1; i++){
+				 var input_2 = input.charAt(i);
+				 if(n < 10){
+					 sum += input_2 * n;
+					 n++;
+				 }else{
+					 n = 2;
+					 sum += input_2 * n;
+					 n++;
+				 }
+			 }
+			 
+			 result2 = 11 - (sum % 11);
+			 
+			 if(result2 == 10){
+				 result2 = 0;
+			 }else if(result2 == 11){
+				 result2 = 1;
+			 }
+			 
+			 if(result2 == input.charAt(input.length - 1)){
+				 return result_1 = "유효한 주민등록번호입니다.";
+			 }else{
+				 return result_1 = "유효하지 않은 주민등록번호입니다.";
+			 }
+			 
+		 }
+		 
+		  
+		  proc1();
+		  
+		  
+		  window.onload = function(){
+			 document.getElementById("result1").innerHTML = result;
+			 document.getElementById("result2").innerHTML = result_1;
+		 }
+		  
+		  
+		  
+		
+		</script>
+	</head>
+	
+	<body>
+		<div id="result1"></div>
+		<div id="result2"></div>
+	</body>
+</html>

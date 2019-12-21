@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+		<title>연습2</title>
+	</head>
+	<body>
+		<form action="입력양식_결과.html" method="get">
+			<h1>회원 가입 화면</h1>
+			이름: <input type="text" name="name"><br>
+			주소: <input type="text" name="adress"><br>
+			email: <input type="email" name="email"><br><br>
+			
+			<!-- 둘 중 하나 선택 가능 -->
+			<input type="radio" name="gender" value="male">남성
+			<input type="radio" name="gender" value="female">여성<br>
+			
+			<!-- 둘 다 선택 가능 -->
+			<input type="radio" name="gender1" value="male">남성
+			<input type="radio" name="gender2" value="female">여성<br>
+						
+			
+			<input type="submit" value="Send">
+			<input type="button" value="돌아가기" onclick="javascript:history.go(0);">
+		</form>		
+	
+	</body>
+</html>

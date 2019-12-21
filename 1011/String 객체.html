@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>String 객체</title>
+		<script>
+		
+		//charAt
+		var s = "우리나라 대한민국 좋은나라";
+		//해당 index의 문자를 리턴(index 범위를 벗어나면 빈 문자열이 된다.)
+		document.write(s.charAt(2) + "<br>"); //'나' 출력
+		
+		//charCodeAt
+		//index 위치의 문자에 대한 유니코드를 구한다.
+		document.write(s.charCodeAt(2) + "<br>"); //'나'라는 한글의 숫자값(유니코드)
+		
+		//indexOf
+		//indexOf(문자열, 시작위치): 시작 위치가 생략되면 0이고, 문자열이 없을 경우 -1을 리턴한다.
+		document.write(s.indexOf("나라") + "<br>"); //2 //"조선" 같은 걸 치면 해당하는 값이 없기 때문에 -1을 출력한다.
+		
+		//lastIndexOf
+		//역방향으로 검색한다.
+		document.write(s.lastIndexOf("나라") + "<br>"); //12 
+
+		
+		//========================================================
+			
+		
+		var s1 = "I love";
+		var s2 = "YOU";
+		
+		//concat
+//		document.write(s1.concat(s2)); //I loveYOU
+		document.write(s1.concat(" ", s2," 뭐라고?") + "<br>"); //공백을 붙이고 싶을 경우
+		
+		var str = s1.concat(s2);
+		
+		//toLowerCase, toUpperCase
+		var lower = str.toLowerCase();
+		var upper = str.toUpperCase()
+		document.write(lower + " / " + upper + "<br>");
+		
+		//replace
+		var newstr = str.replace("YOU", " 유지상");
+		document.write(newstr + "<br>");
+		
+		
+		//========================================================
+		document.write("<hr>");
+		
+		
+		//search	
+		//부분 문자열 또는 정규식을 검색하여 그 위치를 리턴한다.
+		var str = "한글문자열 search 함수 테스트";
+		var result = str.search("함수");
+		document.write(result);
+		
+		
+		//========================================================
+		document.write("<hr>");
+		
+		
+		//str.match
+		var str = "red blue orange";
+		document.write(str.match("blue") + "<br>"); //'blue'랑 똑같다.
+		
+		//test.match(regExp)
+		var test = "I love you. I love me. I love everything.";
+		var regExp = /LOVE/gi; //love,love,love
+		//g= 모든 문자, i= 대소문자 구분 없이 찾는다. i를 빼면 null값이 나올 것. g를 빼면 하나만 찾는다. 
+		document.write(test.match(regExp) + "<br>");
+		
+		
+		/*  << 정규식 >> ※ 중요함
+			g: 모든 전역에서 찾는다(첫 번째 일치하는 문자열을 찾아도 끝까지 검색)
+			i: 대소문자 구분 없이 찾는다.
+			m: 멀티라인도 수행
+			u: 패턴을 유니코드 코드 포인트의 나열로 취급
+			y: "stick" 검색을 수행, 지정된 인덱스로 문자열 검색
+		*/
+		
+		
+		//========================================================
+		
+		
+		document.write("<hr>");
+		
+		//substring(from, to): 두 위치 사이의 부분 문자열을 추출한다.
+		//substring(from): from 위치에서부터 끝까지 추출(to 생략된 거)
+		var str = "I love you";
+		var a = str.substring(2, 6);
+		var res = "원래: " + str + "<br>";
+		res += "substring(2,6): " + a + "<br>";
+		
+		document.write(res);
+		
+		//slice(from, to): from 위치에서 to 위치까지 부분 문자열을 추출한다.
+		//(2,-1) 도 가능. 근데 이런 경우는 거의 없다.
+		a = str.slice(2,6)
+		
+		var str = "I love you";
+		var res = str.slice(2, 6);
+		var res = "원래: " + str + "<br>";
+		res += "slice(2,6): " + a + "<br>";
+		
+		document.write(res);
+
+		
+		
+		var res = "원래: " + str + "<br>";
+		res += "substr(2,4): " + a + "<br>";
+		
+		document.write(res);
+		document.write("<hr>");
+		
+		
+		//========================================================
+		
+		
+		//구분자로 구분된 문자열을 분리하여 배열로 리턴한다.
+		var str = "현솔비/박희제/김영호/최도혁/백운영/조아라";
+		
+		var arr = str.split("/");
+		
+		document.write(arr + "<br>");
+		document.write("<hr>");
+		
+		
+		for(var i = 0; i < arr.length; i++){
+			document.write(arr[i] + "<br>");
+		}
+		document.write("<hr>");
+		
+		
+		
+		function compare(){
+			
+			var e = document.getElementById("email").value; //email 의 value 값을 가져오겠다.
+			var str = "he6305@naver.com";
+			
+			if(e.trim() == str){ //trim() : 앞 뒤 공백만 제거 가능
+				confirm("두 이메일이 동일합니다.");
+			}else{
+				confirm("이메일이 불일치합니다.")
+			}
+		}
+		
+		
+		
+		
+		
+		
+		</script>
+	</head>
+	
+	<body>
+		<input type="text" id="email">
+		<button onclick = "compare();"> 확인 </button>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+

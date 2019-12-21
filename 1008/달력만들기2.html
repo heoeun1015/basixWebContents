@@ -1,0 +1,96 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<style>	
+	 td{text-align:center;}
+	 .cursor{ cursor:pointer}
+	 .today{background-color:pink;}
+	</style>
+	<script>
+		function gridCalendar(year, month){
+			var arrDay = ["일","월","화","수","목","금","토"];
+			var today = new Date(year, month);
+			
+			today.setYear(year);
+			today.setMonth(month);
+			
+			
+			var strT = ""; //실제 테이블 그리는 담는 변수
+			
+			/*1행 좌우 버튼(온클릭) 및 해당 년도,월 출력*/
+			strT += "<table  class=\"table\">";
+			strT += "<tr>";
+			strT += "	<td onclick='gridCalendar("+year+","+(month-1)+");'  class='cursor'>";
+			strT += "	&lt;";
+			strT += "	</td>";
+			strT += "	<td colspan=\"5\">";
+			strT += today.getFullYear() +"년 "+parseInt(today.getMonth()+1)+"월";	
+			strT += "	</td>";
+			strT += "	<td onclick='gridCalendar("+year+","+(month+1)+");'  class='cursor'>";
+			strT += "	&gt;";
+			strT += "	</td>";		
+			strT += "</tr>";
+			
+			/*요일 출력*/
+			strT += "<tr>";
+			for(x in arrDay){
+				strT += "<td>";
+				strT += arrDay[x];
+				strT += "</td>";
+			}
+			strT += "</tr>";
+			
+			
+			var n =0, day=1;
+			var startDay = today.getDay(); //시작요일
+			var todayDate = new Date().getDate(); //오늘 날짜
+			
+			today.setMonth(parseInt(today.getMonth()+1));  //끝나는 날짜 가져오기위한 세팅(월을 이번달로)
+			today.setDate(0);//끝나는 날짜 가져오기위한 세팅 (날짜를 0으로)
+			var endDate = today.getDate();//끝나는 날짜
+			
+			for(var i=0;i<endDate+n; i++){
+				//행 시작할때 tr태그 열어줌 
+				if(i%7 ==0){
+				strT += "<tr>";
+				}
+				
+				
+				if(day == todayDate) //오늘 날짜일때 표시 
+					strT += "<td class='today'>"
+				else 
+					strT += "<td>";
+					
+				if(i>=startDay){ //시작요일 부터 day를 strT(실제 테이블 그리는 변수)에 넣어줌
+					strT +=  day++;
+				}else{
+					n++; //시작요일 이전을 카운트 하여 반복문에서 그만큼 더 출력하게 만들어줌 
+				}
+				strT += "</td>";
+				
+				//행 끝날때 tr태그 닫아줌
+				if(i%7 ==6){
+				strT += "</tr>";
+				}
+			}
+			
+			
+			strT += "</table>";
+			document.getElementById("result").innerHTML = strT;
+		
+		}
+		
+		window.onload = function(){
+			var today = new Date(); //오늘날짜
+			var txt = gridCalendar(today.getFullYear(), today.getMonth()); //함수호출(년도, 월)
+			
+		}
+	</script>
+</head>
+<body>
+	<div class="container" id="result"></div>
+</body>
+</html>

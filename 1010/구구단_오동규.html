@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>구구단</title>
+		<script>
+			var str = "";
+			
+			var n = prompt("몇 단까지 출력할지 입력하세요. (1 ~ 9)");
+			
+			while(1 > n || n > 9){
+				n = prompt("다시 입력해주세요. (1 ~ 9)");
+			}
+			
+			n = parseInt(n);
+			str += "<table border='1'>";
+			for(var i = 0; i < 81; i++){
+				if(i % 27 == 0){
+					str += "<tr>";
+				}
+				if(i % 9 == 0){
+					var x = 1;
+					str += "<td>";
+				}
+				
+				if(parseInt(i / 9) == n - 1){
+					str += parseInt(i / 9 + 1) + " * " + x + " = " + parseInt(i / 9 + 1) * x + "<br>";
+					x++;
+				}
+				
+				if(i % 9 == 8){
+					str += "</td>";
+				}
+				if(i % 27 == 26){
+					str += "</tr>";
+				}
+					
+			}
+			window.onload = function(){
+				document.getElementById("result").innerHTML = str;
+			}
+			
+			
+		</script>
+		<style>
+			td{
+				width:170px;
+				height:170px;
+				text-align:center;
+			}
+			table{
+				position:relative;
+				top:30px;
+				left:30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="result"></div>
+	</body>
+</html>

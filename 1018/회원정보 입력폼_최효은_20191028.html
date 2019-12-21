@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>회원정보 입력폼_최효은_20191028</title>
+		<style>
+			#fie{
+				width: 500px;
+			}
+			#fm{
+				background-color: rgb(245, 245, 245);
+				width: 535px;
+				padding: 5px 15px 15px;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<form id="fm">
+			<h2>회원정보입력폼</h2>
+			<fieldset id="fie">
+				<legend>회원정보입력</legend>
+				<table>
+					<tr>
+						<td>아이디</td>
+						<td colspan="2"><input type="text" name="id">&nbsp;<button>중복검사</button></td>
+					</tr>
+					<tr>
+						<td>이름</td>
+						<td><input type="text" name="name"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>생년월일</td>
+						<td><input type="text" name="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>비밀번호</td>
+						<td><input type="password" name="password_1"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>비밀번호확인</td>
+						<td><input type="password" name="password_2"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>성별</td>
+						<td><input type="radio" name="gender" value="여성" checked>여성&nbsp;<input type="radio" name="gender" value="남성">남성</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>전화 번호</td>
+						<td><input type="tel" name="tel"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>휴대폰 번호</td>
+						<td><input type="tel" name="hp"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>이메일</td>
+						<td><input type="email" name="email"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>우편번호</td>
+						<td colspan="2"><input type="text" name="post">&nbsp;<button>우편번호 검색</button></td>
+					</tr>
+					<tr>
+						<td>주소</td>
+						<td colspan="2"><input type="text" name="address_1" size="50"></td>
+					</tr>
+					<tr>
+						<td>상세주소</td>
+						<td colspan="2"><input type="text" name="address_2" size="50"></td>
+					</tr>
+				</table>
+			</fieldset>
+			<br>
+			<input type="submit" value="제출">
+			<input type="button" value="초기화" onclick="reset();">
+		</form>
+	</body>
+</html>

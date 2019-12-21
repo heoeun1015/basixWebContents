@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>basicCSS</title>
+		
+		<!-- 외부 스타일시트(가장 우선순위가 낮다 3순위 하지만 공용적으로 쓰인다) -->		
+		<link type="text/css" rel="stylesheet" href="css/mystyle.css">
+
+		<!-- 내부스타일 시트(인라인 스타일시트 다음으로 우선순위가 높다 2순위)-->
+		<style>
+		p{color:orange;}
+		</style>
+		
+	</head>
+	<body>
+		<h1>This is headline</h1>
+		<!-- 인라인 스타일시트(우선순위가 가장 높다) -->
+		<!-- p태그는 div태그와 동일하게 블럭요소로 한 줄을 모두 차지한다. -->
+		<p style="color:red; background-color:aqua;">This is paragraph1</p> 
+		<p style="background-color:blue">This is paragraph2</p>
+		<p style="background-color:gray">This is paragraph3</p>
+		<p style="background-color:lime">This is paragraph4</p>
+		<p style="background-color:red">This is paragraph5</p>
+		<p style="background-color:teal">This is paragraph6</p>
+		<p style="background-color:silver">This is paragraph7</p>
+		<p style="background-color:olive">This is paragraph8</p>
+		<p style="background-color:navy">This is paragraph9</p>
+		
+	</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>shoppingCart</title>
+		<style>
+			body{
+				
+			}
+			table, td{
+				border: 1px solid black;
+				text-align: center;
+				border-collapse: collapse;
+			}
+			
+		</style>
+		<script>
+			function calc(){
+				var a1 = document.getElementById("amount1").value;
+				var a2 = document.getElementById("amount2").value;
+				var a3 = document.getElementById("amount3").value;
+				var a4 = document.getElementById("amount4").value;
+				
+				var sum_1 = 2000000 * a1;
+				var sum_2 = 50000 * a2;
+				var sum_3 = 1000 * a3;
+				var sum_4 = 5000 * a4;
+				
+				document.getElementById("sum1").value = sum_1;
+				document.getElementById("sum2").value = sum_2;
+				document.getElementById("sum3").value = sum_3;
+				document.getElementById("sum4").value = sum_4;
+			}
+			
+			
+			function func(){
+				window.parent.location.href = "main.html";
+			}
+		
+		
+		</script>
+		
+		
+		</head>
+		
+	<body>
+		<table>
+			<tr>
+				<td>품목</td>
+				<td>가격</td>
+				<td>수량</td>
+				<td>합계</td>
+			</tr>
+			<tr>
+				<td>컴퓨터 세트</td>
+				<td>2,000,000원</td>
+				<td><input type="text" id="amount1"></td>
+				<td><input type="text" id="sum1"></td>
+			</tr>
+			<tr>
+				<td>티셔츠</td>
+				<td>50,000원</td>
+				<td><input type="text" id="amount2"></td>
+				<td><input type="text" id="sum2"></td>
+			</tr>
+			<tr>
+				<td>음악파일</td>
+				<td>1,000원</td>
+				<td><input type="text" id="amount3"></td>
+				<td><input type="text" id="sum3"></td>
+			</tr>
+			<tr>
+				<td>영화파일</td>
+				<td>5,000원</td>
+				<td><input type="text" id="amount4"></td>
+				<td><input type="text" id="sum4"></td>
+			</tr>
+		</table>
+		<br>
+		<button onclick="calc();">계산</button>
+		<button onclick="">구매</button>
+		<button onclick="reset();">초기화</button>
+		<br><br><br><br><br>
+		<a href="" onclick="func();">Back to home</a>
+	</body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>e나라도움</title>
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+	<link rel = "stylesheet" type ="text/css" href="./css/mystyle.css">
+	<script src="js/jquery-1.11.0.min.js"></script>
+	<script src = "script.js"></script>
+
+</head>
+	<body onload="flash();">
+	
+			<div id ="header">
+				<a href ="https://www.gosims.go.kr/hg/hg001/retrieveMain.do"><img src ="./img/tit_header.png" id="logo" class ="search_c" alt="헤더"></a>
+				
+				<div id="header_icon">
+					<div id="search_d">
+						<input type="text" id="search_box" class ="search_c">
+						<span class ="search_c"><a href="#" id="search">검색</a></span>
+					</div>
+					<div>
+						<a href="#" id="icon_1" ><img src="./img/12.png" class="login" alt="확대"></a>
+						<a href="#" id="icon_2" ><img src="./img/13.png" class="login" alt="되돌리기"></a>
+						<a href="#" id="icon_3" ><img src="./img/14.png" class="login" alt="축소"></a>
+						<a id="icon_4" href="https://www.gosims.go.kr/hf/login/loginView.do"><img class="login1" src="./img/111.png" alt="로그인"></a>
+						<a id="icon_5" href="https://www.gosims.go.kr/hf/login/mgmStep1.do"><img src="./img/112.png" alt="회원가입"></a>
+					</div>
+				</div>
+			</div>
+			
+			
+			<div id ="nav">
+				<div id="flip">
+					<ul>
+						<li class="nav_tilte"><a id="nav_i_11" href="#"></a></li>
+						<li class="nav_tilte"><a id="nav_i_1" href="https://www.gosims.go.kr/hg/hg001/retrieveBasicLaw.do">e나라도움 소개</a></li>
+						<li class="nav_tilte"><a class="nav_bar" id="nav_i_12" href="#"></a></li>
+						<li class="nav_tilte"><a id="nav_i_2" href="https://www.gosims.go.kr/hh/hh001/retrieveCstmzdGuidance.do">맞춤형보조금찾기</a></li>
+						<li class="nav_tilte"><a class="nav_bar" id="nav_i_13" href="#"></a></li>
+						<li class="nav_tilte"><a id="nav_i_3" href="https://www.gosims.go.kr/hg/hg002/retrieveTaskSearchTop.do">공모사업찾기</a></li>
+						<li class="nav_tilte"><a class="nav_bar" id="nav_i_14" href="#"></a></li>
+						<li class="nav_tilte"><a id="nav_i_4" href="https://opn.gosims.go.kr/opn/ii/ii001/getII001001QView.do">정보공시</a></li>
+						<li class="nav_tilte"><a class="nav_bar" id="nav_i_15" href="#"></a></li>
+						<li class="nav_tilte"><a id="nav_i_5" href="https://opn.gosims.go.kr/opn/il/il002/getIL002005QView.do">통계센터</a></li>
+						<li class="nav_tilte"><a class="nav_bar" id="nav_i_16" href="#"></a></li>
+						<li class="nav_tilte"><a id="nav_i_6" href="https://www.gosims.go.kr/hg/hg002/retrieveReport.do">참여와 소통</a></li>
+						<li class="nav_tilte"><a class="nav_bar" id="nav_i_17" href="#"></a></li>
+					</ul>
+					
+				<div id="panel" class="fade">
+				
+				
+					<div class="panel_nav" id="nav_1"><a href="#"></a>
+						<ul class="menu">
+								<li><a class="ul_b" href="https://www.gosims.go.kr/hg/hg001/retrieveBasicLaw.do">e나라도움</a>
+							<ul>
+								<li><a class="ul_f" href="https://www.gosims.go.kr/hg/hg001/retrieveBasicLaw.do">근거법령</a></li>
+								<li><a class="ul_f" href="https://www.gosims.go.kr/hg/hg003/retrieveSysIntr.do">e나라도움</a></li>
+								<li><a class="ul_f" href="https://www.gosims.go.kr/hg/hg001/retrieveMainFnct.do">주요기능</a></li>
+							</ul>
+							</li>
+								<li><a class="ul_b" href="https://www.gosims.go.kr/hg/hg004/retrieveGovsuby.do">국고보조금</a></li>
+								<li><a class="ul_b" href="https://www.gosims.go.kr/hg/hg002/retrieveSysNoticeList.do">관련법령</a></li>
+								<li><a class="ul_b" href="https://www.gosims.go.kr/hg/hg002/retrieveManualList.do">매뉴얼</a>
+							<ul>
+								<li><a class="ul_f" href="https://www.gosims.go.kr/hg/hg002/retrieveManualList.do">사용자 매뉴얼</a></li>
+								<li><a class="ul_f" href="https://www.gosims.go.kr/hg/hg002/retrieveMvpDtaList.do">동영상 매뉴얼</a></li>
+							</ul>
+							</li>
+						</ul>
+					</div>
+					
+		
+					
+					<div class="panel_nav" id="nav_2"><a href="#"></a>
+						<ul class="menu">
+								<li><a class="ul_b" href="https://www.gosims.go.kr/hh/hh001/retrieveCstmzdGuidance.do">보조금 TOP10</a>
+							<ul>
+								<li><a class="ul_f" href="https://www.gosims.go.kr/hh/hh001/retrieveCstmzdGuidance.do">실시간 검색 TOP 10</a></li>
+								<li><a class="ul_f" href="https://www.gosims.go.kr/hh/hh001/retrieveThemaTopTen.do">주제별 인기 TOP 10</a></li>
+							</ul>
+								</li>
+								<li><a class="ul_b" href="#">맞춤형 검색</a>
+							<ul>
+								<li><a class="ul_f" href="https://www.gosims.go.kr/hh/hh001/retrieveIndvdlSearch.do">간편검색</a></li>
+								<li><a class="ul_f" href="https://www.gosims.go.kr/hh/hh001/retrieveIndvdlSearch.do">조건검색</a></li>
+								<li><a class="ul_f" href="https://www.gosims.go.kr/hh/hh001/retrieveUnitySearch.do">상세검색</a></li>
+								<li><a class="ul_f" href="https://www.gosims.go.kr/hh/hh001/retrieveUseeMth.do">이용방법 안내</a></li>
+							</ul>
+								</li>
+						</ul>
+					</div>
+					<div class="panel_nav" id="nav_3"><a href="#"></a>
+						<ul class="menu">
+								<li><a class="ul_b" href="https://www.gosims.go.kr/hg/hg002/retrieveTaskSearchTop.do">공모사업 TOP10</a>
+							<ul>
+								<li><a class="ul_f" href="https://www.gosims.go.kr/hg/hg002/retrieveTaskSearchTop.do">실시간 검색 TOP 10</a></li>
+								<li><a class="ul_f" href="https://www.gosims.go.kr/hg/hg002/retrieveTaskPopTop.do">주제별 인기 TOP 10</a></li>
+							</ul>
+								</li>
+								<li><a class="ul_b" href="#">공모사업 검색</a>
+							<ul>
+								<li><a class="ul_f" href="https://www.gosims.go.kr/hg/hg002/retrieveTaskReqstList.do">공모사업 찾기</a></li>
+								<li><a class="ul_f" href="https://www.gosims.go.kr/hg/hg002/retrieveTaskGuide.do">이용방법 안내</a></li>
+							</ul>
+								</li>
+						</ul>
+					</div>
+					<div class="panel_nav" id="nav_4"><a href="#"></a>
+						<ul class="menu">
+								<li><a class="ul_b" href="https://opn.gosims.go.kr/opn/ii/ii001/getII001001QView.do">보조사업자 정보공시</a>
+							<ul>
+								<li><a class="ul_f" href="https://opn.gosims.go.kr/opn/ii/ii001/getII001001QView.do">개요</a></li>
+								<li><a class="ul_f" href="https://opn.gosims.go.kr/opn/ii/ii001/getII001002QView.do">정보공시 조회</a></li>
+							</ul>
+								</li>
+								<li><a class="ul_b" href="https://opn.gosims.go.kr/opn/ij/ij001/getIJ001001QView.do">중요재산 정보공시</a>
+							<ul>
+								<li><a class="ul_f" href="https://opn.gosims.go.kr/opn/ij/ij001/getIJ001001QView.do">개요</a></li>
+								<li><a class="ul_f" href="https://opn.gosims.go.kr/opn/ij/ij002/getIJ002007QView.do">정보공시 조회</a></li>
+								<li><a class="ul_f" href="https://opn.gosims.go.kr/opn/ij/ij001/getIJ001002QView.do">중요재산 공시 현황</a></li>
+							</ul>
+								</li>
+						</ul>
+					</div>
+					<div class="panel_nav" id="nav_5"><a href="#"></a>
+						<ul class="menu">
+								<li><a class="ul_b" href="https://opn.gosims.go.kr/opn/il/il002/getIL002005QView.do">국고보조금</a>
+							<ul>
+								<li><a class="ul_f" href="https://opn.gosims.go.kr/opn/il/il002/getIL002005QView.do">예산 현황</a></li>
+								<li><a class="ul_f" href="https://opn.gosims.go.kr/opn/il/il003/getIL003006QView.do">집행 현황</a></li>
+								<li><a class="ul_f" href="https://opn.gosims.go.kr/opn/il/il005/getIL005001QView.do">비교 검색</a></li>
+								<li><a class="ul_f" href="https://opn.gosims.go.kr/opn/il/il001/getIL001001QView.do">연도별 추이</a></li>
+							</ul>
+								</li>
+								<li><a class="ul_b" href="https://opn.gosims.go.kr/opn/ih/ih001/getIH001002QView.do">보조사업</a>
+							<ul>
+								<li><a class="ul_f" href="https://opn.gosims.go.kr/opn/ih/ih001/getIH001002QView.do">보조사업 현황</a></li>
+								<li><a class="ul_f" href="https://opn.gosims.go.kr/opn/ih/ih001/getIH001005QView.do">수행단계별 현황</a></li>
+								<li><a class="ul_f" href="https://opn.gosims.go.kr/opn/ih/ih004/getIH004001QView.do">평가 현황</a></li>
+								<li><a class="ul_f" href="https://opn.gosims.go.kr/opn/in/in001/getIN001001QView.do">서비스 유형별 현황</a></li>
+							</ul>
+								</li>
+								<li><a class="ul_b" href="https://opn.gosims.go.kr/opn/ih/ih002/getIH002001QView.do">보조사업자</a>
+							<ul>
+								<li><a class="ul_f" href="https://opn.gosims.go.kr/opn/ih/ih002/getIH002001QView.do">보조사업자 현황</a></li>
+								<li><a class="ul_f" href="https://opn.gosims.go.kr/opn/im/im003/getIM003001QView.do">유형별 비교통계</a></li>
+								<li><a class="ul_f" href="https://opn.gosims.go.kr/opn/im/im001/getIM001001QView.do">연도별 추이</a></li>
+							</ul>
+								</li>
+						</ul>
+					</div>
+					<div class="panel_nav" id="nav_6">
+						<ul class="menu">
+								<li><a class="ul_b" href="https://www.gosims.go.kr/hg/hg002/retrieveReport.do">부정수급 제보</a>
+							<ul>
+								<li><a class="ul_f" href="https://www.gosims.go.kr/hg/hg002/retrieveReport.do">부정수급 제보하기</a></li>
+								<li><a class="ul_f" href="https://www.gosims.go.kr/hg/hg002/retrieveIllegalcaseList.do">보조금 부정 주요 사례</a></li>
+								<li><a class="ul_f" href="https://www.gosims.go.kr/hg/hg002/retrieveIllegalList.do">부정수급이란?</a></li>
+							</ul>
+								</li>
+								<li><a class="ul_b" href="https://www.gosims.go.kr/hg/hg002/retrieveProposeList.do">국민의 소리</a>
+							<ul>
+								<li><a class="ul_f" href="https://www.gosims.go.kr/hg/hg002/retrieveProposeList.do">정책제안</a></li>
+								<li><a class="ul_f" href="https://www.gosims.go.kr/hg/hg002/retrieveSurveyList.do">설문조사</a></li>
+							</ul>
+								</li>
+								<li><a class="ul_b" href="https://www.gosims.go.kr/hg/hg002/retrieveFaqList.do">자주묻는질문</a></li>
+								<li><a class="ul_b" href="https://www.gosims.go.kr/hg/hg002/retrieveNtbdList.do">알림마당</a>
+							<ul>
+								<li><a class="ul_f" href="https://www.gosims.go.kr/hg/hg002/retrieveNtbdList.do">공지사항</a></li>
+								<li><a class="ul_f" href="https://www.gosims.go.kr/hg/hg002/retrieveNesList.do">보도자료</a></li>
+								<li><a class="ul_f" href="https://www.gosims.go.kr/hg/hg002/retrievePolicyList.do">홍보자료</a></li>
+								<li><a class="ul_f" href="https://www.gosims.go.kr/hg/hg002/retrieveVldtList.do">영상자료</a></li>
+								<li><a class="ul_f" href="https://www.gosims.go.kr/hg/hg001/retrieveWebToon.do">웹툰</a></li>
+								<li><a class="ul_f" href="https://www.gosims.go.kr/hg/hg001/retrieveRenewalGuide.do">홈페이지 이용 안내</a></li>
+							</ul>
+								</li>
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+			<br>
+			
+			<div id = "wrapall">
+			
+			<div id="CA">
+				<div id="contents">
+					<div id="contents1">	
+						<div id="contents_div1">
+						<a href="main_1.html" target="main" class="line" onclick="div_1();">
+						<img id="iicon_1" src="./img/231.png" alt="main_1">
+						</a></div>
+						
+						<div id="contents_div2"><a href="main_2.html" target="main" class="line" onclick="div_2();">
+						<img id="iicon_2" src="./img/242.png" alt="main_2">
+						</a></div>
+						
+						<div id="contents_div3"><a href="main_3.html" target="main" class="line" onclick="div_3();">
+						<img id="iicon_3" src="./img/243.png" alt="main_3">
+						</a></div>
+					
+					</div>
+					<div id="contents2">
+						<iframe id="if_1" src="main_1.html" name="main"></iframe>
+					</div>
+				</div>
+				
+				
+				<div id ="aside">
+					<div class = "aside1-1" id = "ad1-1">
+						<div id ="ad1-2">
+							<img src="./img/상단1.png" id="aa1" alt ="상단">
+						</div>
+						<div id ="ad1-3">
+							<p id ="aa2">인기있는 보조금 랭킹</p>
+						</div>
+						<div id ="ad1-4">
+							<a href="http://www.gosims.go.kr/hg/hg002/retrieveNtbdList.do">
+							<img id="aa3" src ="./img/btn_more.png" alt ="버튼아이콘"></a>
+						</div>	
+						<div id ="aa1-5">
+							<img id="aa1-6" src= "./img/rank1.jpg" alt ="인기 보조금 랭킹">
+						</div>
+						
+						
+						
+					</div> 
+					<div id ="aside2" class = "aside1-1">
+						<div id = "ad1">
+							<div id="ad2">
+								<img src="./img/확성기.png"  alt="확성기">
+							</div>
+							<div id="ad3">
+								알림마당
+							</div>
+							<div id ="ad4">
+								<a href="http://www.gosims.go.kr/hg/hg002/retrieveNtbdList.do"><img src ="./img/btn_more.png" alt="버튼 아이콘"></a>
+							</div>							
+						</div>
+						
+						<div id ="ad5" class="bb1">
+							 <a href="http://www.gosims.go.kr/hg/hg002/retrieveReport.do"> [공지]e나라도움 교육신청 안내_11월</a>
+						</div>
+						<div id = "ad6">
+							 <p> ♣ e나라도움 사용자교육 신청안내<br>
+							  ♣ 온라인교육시스템으로 이동하<br></p>
+							  <p id = "ad7">2019-10-18</p>
+						</div>
+					
+					</div>
+					
+						<div id ="aside3" class = "aside1-1">
+							<div id = "ad8">
+								<img id="ad8_1" src="./img/obj_glass.png" alt="안경 아이콘">
+								<p><a href ="http://www.gosims.go.kr/hg/hg002/retrieveReport.do"> 부정수급제보센터 </a></p>
+							</div>
+						</div>
+						<div id ="aside4" class = "aside1-1">
+							<div id = "ad9">
+								<div id ="ad10"><img src="./img/마이크.png" alt="마이크 아이콘"></div>
+								<div><p id = "ad11">보도자료</p></div>
+								<div id ="ad12"><a href="http://www.gosims.go.kr/hg/hg002/retrieveNesList.do"><img src ="./img/btn_more.png" alt="버튼 아이콘"></a></div>
+							</div>
+							<div>
+								<p id ="ad13" class="bb1"><a href="http://www.gosims.go.kr/hg/hg002/retrieveNesList.do">[보도자료]e나라도움 기능개선</a></p>
+							</div>
+						</div>
+						
+					<div id ="aside5" class = "">
+						<div id ="ad14"><img src ="./img/팝업존.png" alt="팝업 아이콘"></div>
+						<div id = "ad15"><P>팝업존</P></div>
+						<div id = "ad16" onclick = "chimg();"><img id ="ad17" src ="./img/버튼1.png" alt="스위치"></div>
+					</div>
+					
+					<div id ="aside6" class = "">
+					<a href="https://cafe.naver.com/enaratong"><img id ="ad18" src = "./img/이미지1.png" alt="이미지1"></a>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+			
+			<div id="footer">
+				<div id ="footer1">
+					<a href="http://www.president.go.kr" target="_blank"><img class="foot_1" src="./img/footer_1.png" alt="청와대"></a>
+					<a href="http://www.moef.go.kr" target="_blank"><img class="foot_1" src="./img/footer_2.png" alt="기획재정부"></a>
+					<a href="https://www.mois.go.kr/frt/a01/frtMain.do" target="_blank"><img class="foot_1" src="./img/footer_3.png" alt="행정안전부"></a>
+					<a href="https://www.kpfis.or.kr" target="_blank"><img class="foot_1" src="./img/footer_4.png" alt="한국재정정보원"></a>
+				</div>
+			</div>
+			
+			<div id="footer1_1">	
+			<div id ="footer2">
+				<div id = "ad19"><a id = "ad19-1" href="https://www.gosims.go.kr/hf/hf001/retrieveAgreement3.do">개인정보처리방침</a>
+					<span><a id="ad19-2" href ="https://www.gosims.go.kr/hg/hg001/retrieveHelpCenter.do" target = "_blank">나라도움 상담센터 : 1670-9595(국고국고), 02-6676-5100</a></span>
+					 &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+					 FAX : 02-6312-8349
+					 &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+					 <span> 이메일 : gukgobojohelp@korea.kr</span>
+					 <span>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;</span>
+					 <span><a id="ad19-3" href="http://1.232.230.15/" target ="_blank"> 원격지원 </a></span>
+					 <span>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;</span>
+					 <span><a id="ad19-4" href="https://www.gosims.go.kr/hf/hf001/retrieveAgreement5.do" target ="_blank"> 이용약관 </a></span>
+					 <br><br>
+					 <span>기획재정부 : [30109] 세종특별자치시 갈매로 477 정부세종청사</span>
+					 <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+					 <span>한국재정정보원 : [04637] 서울특별시 중구 퇴계로 10 메트로타워 19층</span>
+					 
+					 <br><br>
+					 
+					 <span>Copyright&nbsp;ⓒ &nbsp;Ministry of Economy and Finance, Republic of Korea, Some Rights Reserved.</span>
+				 </div>
+				  <div id="ad_div">
+					 <img id ="ad20" src ="./img/footer_logo1.png" alt="기획재정부">
+					 <img id ="ad21" src ="./img/footer_logo2.png" alt="한국재정정보원">
+				     <a href="https://www.gosims.go.kr/pims.jsp"><img id ="ad22" src ="./img/footer_logo3.png" alt="개인정보보호 관리체계 인증서"></a>
+				 </div>
+				 
+				</div>
+			</div>
+		
+		
+		
+		
+	</body>
+</html>

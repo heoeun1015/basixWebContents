@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>객체접근</title>
+		<style>
+		img{
+			width: 300px;
+			height: 300px;
+		}
+		</style>
+	</head>
+	
+	<body>
+		<img src="../img/호랑이.jpg" id="img1" name="myImg"> 
+		<form name="myform">
+			<input type="text" name="txt1">
+			<input type="text" name="txt2">
+			<button onclick="func1();">눌러서 값을 가져오세요.</button>
+			<!-- 함수 여러개를 호출하고 싶으면 func1(); func2(); 로 써줘도 된다.-->
+		</form>
+		
+		
+		<script>
+		
+			//alert(decodeURI(document.getElementById("img1").src));
+				//file:///D:/A_TeachingMaterial/2.Html/WebContent/img/%ED%98%B8%EB%9E%91%EC%9D%B4.jpg
+				//decodeURI: file:///D:/A_TeachingMaterial/2.Html/WebContent/img/호랑이.jpg
+			
+			//alert(decodeURI(document.myImg.src));
+				//file:///D:/A_TeachingMaterial/2.Html/WebContent/img/호랑이.jpg
+				//id랑 name이랑 같은 걸로 쓰면 헷갈린다. 다르게 써주자.
+			
+			function func1(){
+// 					alert(document.myform.txt1.value + document.myform.txt2.value); //★ 많이 쓰인다!
+// 					alert(document.myform.txt2.value);
+					
+					alert(document.forms[0].elements[0].value);
+					//form 첫 번째, elements는 폼 내부 태그 중 첫 번째를 뜻함. 0부터 시작.
+				}
+				
+				
+			alert(decodeURI(document.images[0].src)); //아이디, 네임도 없는 이미지를 가져올 경우
+			
+				
+				
+				
+		</script>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+

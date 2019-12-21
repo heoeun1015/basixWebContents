@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Math 객체</title>
+		<script>
+		
+			/*
+			Math.random() * 10: 0 ~ 9
+			Math.random() * 10 + 1: 1 ~ 10
+			Math.random() * 20 + 11: 11 ~ 30 
+			
+			Math.floor(): 소수점 버림, 정수 반환
+			Math.ceil(): 소수점 올림, 정수 반환
+			Math.round(): 소수점 반올림, 정수 반환
+			*/
+			
+			
+			// 문제1. 1 ~ 10 까지의 랜덤 수를 발행 후, 프롬프트를 사용하여 사용자가 맞추는 프로그램을 작성하세요.
+			// alert("틀렸습니다."); → prompt 다시 띄워주기
+			// alert("XX번만에 맞추셨습니다."); → prompt 다시 띄워주기	
+			
+			/* 
+			var random = Math.floor(Math.random() * 10) + 1;
+			var cnt = 1;
+			
+			while(true){
+				var input = prompt("숫자를 입력해주세요");
+				
+				if(input == random){
+					alert(cnt + "번 만에 맞추셨습니다!");
+					break;
+				}else{
+					alert("틀렸습니다.");
+					cnt++;
+				}
+			}
+			 */
+			
+			 
+			 
+			
+			// 문제2. 가위 바위 보 게임을 할 수 있는 프로그램을 작성하세요.
+			// (컴퓨터는 랜덤, 사용자는 prompt로 입력 받아서)
+			// 출력 형식
+			// 컴퓨터가 가위로 이겼습니다. or 사용자가 바위로 이겼습니다.
+			
+			/* 
+			random = Math.floor(Math.random() * 3) + 1;
+			 console.log(random);
+			
+				
+			var input = prompt("가위(1)/바위(2)/보(3) 중 하나를 입력하세요.");
+			console.log(input);
+			
+			if(input == "가위"){var input_2 = 1;}
+			else if(input == "바위"){input_2 = 2;}
+			else{input_2 = 3;}
+			console.log(input);
+			
+			switch(input_2 - random){
+			case 1: case -2: document.write("사용자가  " + input + "로 이겼습니다."); break;
+			case -1: case 2: document.write("사용자가 " + input + "로 졌습니다.");	break;
+			case 0: document.write("사용자가 " + input + "로 비겼습니다.");break;
+			}
+			 */		
+			 
+			
+				 
+			
+			// 문제3. 로또 번호를 생성하는 프로그램을 작성하세요.
+			// (1번 ~ 45번 중 6개의 번호를 추첨) * 5번
+			// 한 줄에는 중복되는 숫자 없이 출력.
+			
+			/* 
+			3 6 7 29 4 19
+			6 1 17 39 14 29
+			13 6 3 9 44 9
+			13 2 7 29 4 29
+			3 6 2 25 3 29
+			 */
+			
+			
+			 
+			 
+			 
+			  
+				var str = "";
+				var arr = new Array();
+				
+				
+				
+			 function number(){
+				 for(var i = 0; i < 6; i++){
+					 arr[i] = Math.floor(Math.random() * 45) + 1;
+					 for(var j = 0; j < i; j++){
+						 if(arr[i] == arr[j]){
+							 i--;
+							 break;
+						 }
+					 }
+				}
+			}	
+			 
+			 
+			 str += "<table>";
+			 for(var i = 0; i < 5; i++){
+				 	str += "<tr>";
+						number();
+				 	for(var j = 0; j < 6; j++){
+						str += "<td class=i" + i + ">";
+						str += arr[j];
+					str += "</td>"
+				 	}
+				 str += "</tr>";
+			 }
+			 str += "</table>";
+			 
+			 
+			 
+			 window.onload = function(){
+				 document.getElementById("result").innerHTML = str;
+			 }
+			
+			  
+			 
+			 
+			 
+			
+			
+		
+		</script>
+		<style>
+			table{
+				width: 400px;
+				height: 350px;
+			}
+			td{
+				text-align: center;
+				border-radius: 100px;
+				margin: 10px;
+				font-weight: bold;
+/* 				padding: 10px; */
+			}
+			.i0{
+				background-color: pink;
+			}
+			.i1{
+				background-color: green;
+			}
+			.i2{
+				background-color: blue;
+				color: white;
+			}
+			.i3{
+				background-color: yellow;
+			}
+			.i4{
+				background-color: black;
+				color: white;
+			}
+			
+			#result{
+				width: 500px;
+				height: 500px;
+			}
+			
+			#title{
+				width: 400px;
+				height: 20px;
+				text-align: center;
+				margin-bottom: 10px;
+				font-weight: bold;
+				color: lightblue;
+				border: 3px solid lightblue;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div id="title">LOTTO</div>
+		<div id="result"></div>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+

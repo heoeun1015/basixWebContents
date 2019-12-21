@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>form</title>
+		<script>
+		
+			function proc1(){
+				var ment = "";
+				
+				var f = document.fm; //폼 자체를 가져왔다.
+				var nm = f.nm.value; //이름의 value 값을 가져옴.
+				var gender = f.gender.value;
+				
+				//alert(nm);
+				//alert(gender);
+				ment = nm + "씨!\n당신은 " + gender + "이고,\n";
+				
+				var hobby = "";
+				
+				for(var i = 0; i < f.hobby.length; i++){ //hobby의 길이를 가져온다.
+					if(f.hobby[i].checked){
+						//alert(f.hobby[i].value);
+						hobby += f.hobby[i].value + ", ";
+					}
+				}
+				
+				if(hobby == ""){ment += "취미가 없으시군요.";
+				}//else{ment += "취미는 " + hobby + "이군요!";}
+				var last = hobby.lastIndexOf(",");
+				ment += hobby.substring(0, last); //ex) last = 10이면, 0부터 10 전까지만 가져온다.
+				else{
+				
+				//ment += "이군요!";
+					
+				f.txt.value = ment;
+				}
+				
+				
+// 				document.getElementById("txt").innerHTML = ment;
+// 				document.txt2.
+			}
+		
+		</script>
+		
+	</head>
+	
+	<body>
+		<form name="fm" onsubmit="return false;"> <!-- 내용 그대로 해서 안 넘어가게 하는 함수 -->
+			<p>이름: <input type="text" size="15" name="nm"></p>
+			<p>성별: <input type="radio" name="gender" value="남자" checked>남자&nbsp;&nbsp;&nbsp;
+			<input type="radio" name="gender" value="여자">여자</p>
+			
+			<p>
+			취미: <input type="checkbox" name="hobby" value="여행">여행&nbsp;&nbsp;
+			<input type="checkbox" name="hobby" value="독서">독서&nbsp;&nbsp;
+			<input type="checkbox" name="hobby" value="영화감상">영화감상&nbsp;&nbsp;
+			<input type="checkbox" name="hobby" value="바둑">바둑&nbsp;&nbsp;
+			<input type="checkbox" name="hobby" value="장기">장기&nbsp;&nbsp;
+			<input type="checkbox" name="hobby" value="등산">등산&nbsp;&nbsp;
+			<input type="checkbox" name="hobby" value="낚시">낚시&nbsp;&nbsp;
+			</p>
+			
+			<button onclick="proc1();">결과출력</button><br><br>
+			<textarea rows="10" cols="100" id="txt" name="txt1"></textarea>
+		
+		</form>
+	</body>
+</html>

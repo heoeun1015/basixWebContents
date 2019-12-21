@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>배열 객체 문제</title>
+		<script>
+		
+			/* 
+			
+			문제1. prompt로 사람 이름 5명을 입력받아서 배열에 놓고
+				prompt 2개로 숫자를 2개(0 ~ 4)를 받아서 그 범위만큼의 배열을 출력하세요.
+			
+				함수 사용
+				
+				
+				function solution(){
+				
+					return 출력부분;
+				
+				}
+			
+			document.write(solution());
+				
+			 */
+			 
+			 
+			 
+			 /* 
+			 var arr = new Array();
+			 
+			 
+			 function solution(){
+				 	
+				for(var i = 0; i < 5; i++){
+					var inp = prompt("사람 이름을 입력해주세요.");
+					arr[i] = inp;
+				}
+				
+				var inp2 = prompt("숫자를 입력해주세요.");
+				var inp3 = prompt("숫자를 입력해주세요.");
+				 
+				arr = arr.slice(inp2, inp3);
+				 	
+				return arr;
+				
+			}
+			 
+//			var a = solution(arr); 
+			document.write(solution());
+			  */
+			 
+			
+			
+			//문제2. prompt로 이름 받을 때, 자신의 이름을 넣고 자신의 이름이 들어간 index 번호를 출력하세요.
+			
+			
+			
+			var arr = new Array();
+			 
+			 
+			 function solution(){
+				 	
+				for(var i = 0; i < 5; i++){
+					var inp = prompt("사람 이름을 입력해주세요.");
+					arr[i] = inp;
+				}
+				
+				return arr.indexOf("최효은");
+				
+			}
+			 
+			/* var a = solution(arr); */
+			document.write(solution());
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	</head>
+
+	<body>
+		
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>배열객체문제</title>
+  <style>
+
+    td {
+      border: 1px solid #444444;
+      width: 100px;
+      height: 50px;
+      text-align: center;
+    }
+
+  </style>
+    <script>
+      /* prompt로 사람이름 5명을 받아서 배열에 넣고
+         prompt로 숫자 2개를 받아서 그 범위만큼의 배열을 출력하세요
+      */
+
+      // var nameArray = new Array();
+      // var InputNum = new Array();
+      // function solution() {
+      //     for(var i =0; i<5; i++) {
+      //         var nameInput = prompt("사람 이름을 입력하세요");
+      //         nameArray[i] = nameInput;
+      //     }
+      //     for(var j =0; j<2; j++) {
+      //       InputNum[j] = prompt(j+1 +"번 숫자를 입력하세요");
+      //     }
+      //     nameArray = nameArray.slice(InputNum[0]-1, InputNum[1]);
+      //     return nameArray;
+      // }
+      // document.write(solution());
+
+      /* 문제2) prompt로 이름받을떄, 자신의 이름을 넣고
+       자신의 이름이 들어간 index번호를 출력하세요
+       */
+
+      // var inputArr = new Array();
+      // for(var i=0; i<5; i++) {
+      //     var inputName = prompt("넣을 이름들을 입력하세요");
+      //     inputArr[i] = inputName;
+      // }
+      //
+      // var name = prompt("인덱스번호를 출력할 이름을 입력하세요");
+      // inputArr.indexOf(name);
+      // document.write(inputArr.indexOf(name));
+      // document.write(inputArray);
+
+
+
+
+      // var arr = new Array();
+      //step1 1부터 25까지의 숫자가 랜덤으로 들어간다
+      // var arr = new Array();
+      // for(var i = 0; i<25; i++) {
+      //     var result = Math.floor(Math.random() * 25) +1;
+      //     arr[i] = result;
+      // }
+
+      var arr = new Array();
+      for(var i = 0; i<25; i++) {
+          arr[i] = Math.floor(Math.random() * 25) +1;
+          for(var j = 0; j<i; j++) {
+              if(arr[i] == arr[j]) {
+                  i--;
+                  break;
+              }
+          }
+      }
+      // document.write(arr);
+      // for(var i = 0; i<25; i++) {
+      //     document.write(" " + arr[i]);
+      //     if(i % 5 == 0 && i != 0) {
+      //        document.write("<br>");
+      //     }
+      // }
+
+      //step3) 5*5의 테이블 형태로 넣기
+      //table 태그안에다 <tr> <td>로 넣어준다.
+
+      var bingo = new Array();
+       var bingoCnt = 0;
+       bingo = [1,2,3,4,5];
+      // var element = document.getElementById(id);
+      // if(element.background == "black") {
+      //     bingoCnt++;
+      // }
+      document.write("<table>");
+
+      for(i=1; i<26; i++) {
+
+          if(i%5 == 1) {
+              document.write("<tr>");
+          }
+          document.write("<td id="+i+ " onclick = 'changeBlack(this.id)'>" +arr[i-1]+ "</td>");
+
+
+          if(i%5 == 0) {
+              document.write("</tr>");
+          }
+      }
+      document.write("</table>");
+
+      function changeBlack(id) {
+          var element = document.getElementById(id);
+          element.style.backgroundColor = "black";
+      }
+
+      // document.write(arr);
+
+      //step2 중복이 나오는걸 방지한다.
+      // arr[0] = 3;
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

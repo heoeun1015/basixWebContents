@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>switch</title>
+		<script>
+		
+/* 			var grade = prompt("성적을 입력하세요.","A-F사이의 문자로 입력해주세요. (E학점 제외)");
+		
+			switch(grade){
+			case "A": alert("참 잘했습니다.");
+				break;
+			case "B": alert("잘했습니다.");
+				break;
+			case "C": alert("조금만 더 노력하세요.");
+				break;
+			case "D": alert("노력하세요.");
+				break;
+			case "F": alert("재수강하세요.");
+				break;
+			default : alert("A-F사이의 문자로 입력해주세요. (E학점 제외)");
+				break;
+			}
+			 */
+			 
+			 
+			 var input1 = prompt("가위바위보를 입력하세요. (첫 번째 사람)","'가위 / 바위 / 보' 중 하나를 입력하세요.");
+			 var input2 = prompt("가위바위보를 입력하세요. (두 번째 사람)","'가위 / 바위 / 보' 중 하나를 입력하세요.");
+			 
+			 //조건문 넣어주세요.
+
+			 //결과값: 첫 번째 사람이 승리하셨습니다.
+			 //두 번째 사람이 승리하셨습니다.
+			 //비겼습니다.
+			 
+			 
+/* 			 if(input1 == input2){
+				 alert("비겼습니다.");
+			 }else if(input1 == "가위" && input2 == "보"){
+				 alert("첫 번째 사람이 이겼습니다.");
+			 }else if(input1 == "가위" && input2 == "바위"){
+				 alert("두 번째 사람이 이겼습니다.");
+			 }else if(input1 == "바위" && input2 == "보"){
+				 alert("두 번째 사람이 이겼습니다.");
+			 }else if(input1 == "바위" && input2 == "가위"){
+				 alert("첫 번째 사람이 이겼습니다.");
+			 }else if(input1 == "보" && input2 == "가위"){
+				 alert("두 번째 사람이 이겼습니다.");
+			 }else if(input1 == "보" && input2 == "바위"){
+				 alert("첫 번째 사람이 이겼습니다.");
+			 }else{
+				 alert("다시 입력해주세요.");
+			 } */
+			 
+			 
+			 if((input1 == "가위" && input2 == "보")
+					|| (input1 == "바위" && input2 == "가위")
+					|| (input1 == "보" && input2 == "바위") ){
+				 alert("첫 번째 사람이 이겼습니다.");
+			 }else if((input1 == "가위" && input2 == "바위") 
+					 || (input1 == "바위" && input2 == "보") 
+					 || (input1 == "보" && input2 == "가위")){
+				 alert("두 번째 사람이 이겼습니다.");
+			 }else{
+				 alert("비겼습니다.");
+			 }
+			 
+			 
+			 
+			 
+		</script>
+	</head>
+	
+	<body>
+		
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

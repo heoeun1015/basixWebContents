@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>위치 설정</title>
+	</head>
+		<style>
+			body{
+				margin: 0;
+				padding: 0;
+			}
+			p, div{
+				width: 200px;
+				height: 50px;
+			}
+		
+			#one{
+				background-color: cyan;
+			}
+			#two{
+				background-color: yellow;
+				position: fixed; /* 브라우저 윈도우에 상대적으로 요소의 위치를 잡는 것 */
+				top: 30px; left: 30px;
+				
+				/* position: absolute; *//* 전체 페이지를 기준으로 시작 위치에서 top/left만큼 떨어진다. (브라우저 기본 여백 포함)*/
+				
+				/* top: 100px;
+				left: 30px; */
+			 	
+			
+				/* background-color: yellow;
+				position: static;
+				position: relative; // 정상적인 위치에서 상대적으로 요소가 배치된다.
+				left: 30px;
+				top: 100px; */
+				
+				/* static은 기본. 두 개 다 쓰면 relative만 먹는다. */
+			}
+			#three{
+				background-color: lightgreen;
+			}
+			
+		
+		</style>
+	<body>
+		<!-- 정적 위치 설정 -->
+		<p id="one">block #1</p>
+		<div id="two">
+			block #2<br>
+		</div>
+		<p id="three">block#3</p>
+	</body>
+</html>

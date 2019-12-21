@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>학습자레벨4_문제풀기</title>
+		<script>
+		
+		 function solution(n, money) {
+		    var answer = 0;
+		    var ans_f = "100 이하의 자연수를 입력해주세요.";
+		    
+		    if(n > 100){
+		    	return ans_f;
+		    }
+		    for(var i = 0; i < n; i++){
+		    	if(n % money[i] == 0){answer++};
+			    }
+		     
+	    	for(var i = n; i >= 1; i--){
+	    		for(var j = n; j >= 1; j--){
+	    			if(n % (money[0] * i + money[1] * j) == 0){
+	    				answer++;
+	    			}
+	    		}
+	    	}
+	    	for(var i = n; i >= 1; i--){
+	    		for(var j = n; j >= 1; j--){
+	    			if(n % (money[0] * i + money[2] * j) == 0){
+	    				answer++;
+	    			}
+	    		}
+	    	}
+	    	for(var i = n; i >= 1; i--){
+	    		for(var j = n; j >= 1; j--){
+	    			if(n % (money[1] * i + money[2] * j) == 0){
+	    				answer++;
+	    			}
+	    		}
+	    	}
+		    return answer;
+		}
+		
+		
+		
+		var n = 11;
+		var money = [1, 2, 5];
+		
+		var coin = solution(n, money);
+		document.write(coin);
+		
+		
+		</script>
+	</head>
+	
+	<body>
+		
+	</body>
+</html>

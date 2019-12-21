@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Number 객체</title>
+		<script>
+		
+			var x = 0xAB; //16진수 A = 10, B = 11 (10*16 + 11*1) = 171
+			var y = 29;
+			
+			document.write(x+y); //200
+			document.write("<hr>");
+			
+			var num = 256;
+			document.write(num.toString() + "<br>");
+			document.write(num.toString(2) + "<br>"); //2진수
+			document.write(num.toString(8) + "<br>"); //8진수
+			document.write(num.toString(16)); //16진수
+			document.write("<hr>");
+			
+			var x = 100;
+			var y = new Number(100); //객체화. 둘러싸줬다.
+			
+			document.write(x);
+			document.write(y);
+			document.write("<hr>");
+			
+			document.write(typeof x + "<br>");
+			document.write(typeof y + "<br>");
+			document.write("<hr>");
+			
+			document.write(x == y);
+			document.write("<hr>");
+			document.write(x === y + "<br>");
+			document.write("<hr>");
+			
+			document.write(Number.MAX_VALUE + "<br>"); //보통 무한루프에 빠지는 이유
+			document.write(Number.MIN_VALUE);
+			document.write("<hr>");
+			
+			
+			//NaN(Not a Number)
+			//isNaN 함수 : 숫자가 아닌게 맞나요?
+			//숫자면 false, 숫자가 아니면 true
+			
+			document.write(isNaN(123) + "<br>"); //false
+			document.write(isNaN("hello") + "<br>"); //true
+			document.write(isNaN("123") + "<br>"); //false. 알아서 치환해서 123 숫자만 출력해서 비교한다. (숫자값)
+			document.write(isNaN(0/0) + "<br>"); //true. 숫자가 아닙니다.
+			document.write(0/0 + "<br>"); //NaN
+			document.write(isNaN("2005/12/21")); //true. 숫자가 아닙니다.
+			document.write("<hr>");
+			
+			
+			//지수표기법(반올림, 인수는 소수점 이하 개수)
+			//toExponential
+			var x = 9.656;
+			document.write(x.toExponential(2) + "<br>"); //9.66e+0
+			document.write(x.toExponential(6) + "<br>"); //9.656000e+0. 소수점 여섯번째 자리 수를 맞춰서 나온다.
+			document.write("<hr>");
+			
+			//소수자리 지정(반올림, 인수는 소수점 이하 개수). 많이 쓰인다.
+			//toFixed
+			var x = 9.663;
+			document.write(x.toFixed(0) + "<br>"); //소수점만 반올림 하겠다. 자주 쓸 것 같음.
+			document.write(x.toFixed(2) + "<br>"); //9.66
+			document.write("<hr>");
+			
+			//지정된 길이로 전체의 길이를 나타냄. 그렇게 자주 쓰이진 않는다.
+			//toPrecision
+			var x = 10.666;
+			document.write(x.toPrecision() + "<br>");  
+			document.write(x.toPrecision(2) + "<br>"); //전체에서 두 가지 숫자.
+			document.write(x.toPrecision(4) + "<br>");
+			document.write("<hr>");
+			
+			
+			var x = 123;
+			var y = new Number("aaaa");
+			var z = new Number(123);
+			var k = new Number("123");
+			var l = new Number("12z3");
+			
+			var str = "";
+			
+			//typeof: 타입을 알아보고 싶을 때.
+			str += "x type = " + typeof x + "<br>"; //Number
+			str += "y type = " + typeof y + "<br>"; //object
+			str += "z type = " + typeof z + "<br>"; //object
+			
+			//valueOf: 값을 알아보고 싶을 때.
+			str += "x.valueOf type=" + x.valueOf() + "<br>"; //123
+			str += "y.valueOf type=" + y.valueOf() + "<br>"; //NaN
+			str += "z.valueOf type=" + z.valueOf() + "<br>"; //123
+			str += "k.valueOf type=" + k.valueOf() + "<br>"; //123
+			str += "l.valueOf type=" + l.valueOf() + "<br>"; //NaN
+			//자바의 경우에 z, y만 쓰면 값이 안 나온다. html은 valueOf을 안 써도 값이 나온다.
+			
+			document.write(str);
+			document.write("<hr>");
+			
+			
+			
+			
+			
+			//문자열을 파싱하여, 문자열에 포함된 숫자 부분을 정수 형태로 반환
+			var x = "12";
+			document.write(typeof x + "<br>"); //""가 있기 때문에 String이 나온다.
+			document.write(x = Number.parseInt(x)); //parseInt만 써도 됨. 앞에 Number가 생략된다.
+			document.write("<br>" + typeof x); //Number 타입.
+			document.write("<hr>");
+			
+			//parseInt는 사파리·익스플로러 지원 X
+			document.write(Number.parseInt("12.34") + "<br>"); //12
+			document.write(Number.parseInt("12문자열") + "<br>"); //문자열 무시하고 12만 가져온다.
+			document.write(Number.parseInt("문자열12문자열") + "<br>"); //NaN. 앞부터 비교하기 때문에.
+			document.write(Number.parseInt("30 40 50") + "<br>"); //30. 빈칸도 문자열로 인식해서 뒤는 다 버린다.
+			document.write("<hr>");
+			
+			
+			//Number.parseFloat()
+			//문자열을 파싱하여, 문자열에 포함된 숫자 부분을 실수 형태로 반환함.
+			//사파리와·익스플로러 지원 X
+			document.write(Number.parseFloat("12.34") + "<br>"); //12
+			document.write(Number.parseFloat("12문자열") + "<br>"); //문자열 무시하고 12만 가져온다.
+			document.write(Number.parseFloat("문자열12문자열") + "<br>"); //NaN. 앞부터 비교하기 때문에.
+			document.write(Number.parseFloat("30 40 50") + "<br>"); //30. 빈칸도 문자열로 인식해서 뒤는 다 버린다.
+			document.write("<hr>");
+			
+			
+			//Number.isNaN(): 전달된 값이 NaN인지 아닌지를 판단함
+			//이 메소드는 오직 숫자인 값에서만 동작하며, 그 값이 NaN(Not a Number)인 경우에만 true를 반환합니다.
+			//익스플로러 지원 X
+			document.write(Number.isNaN(1) + "<br>"); //false
+			document.write(Number.isNaN(NaN)); //true
+			document.write("<hr>");
+			
+			//Number.isFinite(): 전달된 값이 유한한 수인지 아닌지를 검사함
+			document.write(Number.isFinite(0) + "<br>"); //true
+			document.write(Number.isFinite(3.45) + "<br>"); //true
+			document.write(Number.isFinite(NaN)); //false
+			document.write("<hr>");
+			
+			//Number.isInteger(): 전달된 값이 정수인지 아닌지를 검사함
+			document.write(Number.isInteger(0) + "<br>"); //true
+			document.write(Number.isInteger(-100) + "<br>"); //true
+			document.write(Number.isInteger(0.1) + "<br>"); //false
+			document.write(Number.isInteger("문자열")); //false
+			document.write("<hr>");
+			
+			//Number.isSafeInteger()
+			//전달된 값이 안전한 정수(Safe integer)인지 아닌지를 검사함
+			//안전한 정수란 IEEE 754 국제표준에서 정의한 64비트 부동 소수점 수로 정확히 표현되는 정수.
+			//-(253-1)부터 (253-1)까지의 모든 정수가 안전한 정수에 포함 됨.
+			
+			
+			
+			
+			
+		</script>
+	</head>
+	
+	<body>
+		
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

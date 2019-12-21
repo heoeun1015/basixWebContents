@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>배열정리</title>
+	</head>
+	<script>
+	
+// 		document.getElementById("x").value  //123을 불러온다. 셀렉트 박스. 콤보박스. 인풋 타입 텍스트
+// 		document.getElementById("x").innerHTML
+// 		= "여기에 대체되는 텍스트를 넣어주세요.";
+		
+		
+		
+		
+/* 	
+		
+		//함수(지역변수, 전역변수)
+		
+		var str; //전역변수
+		function sol1(){
+			
+			var str = "솔루션1 함수입니다.";
+			return str;
+		}
+		
+		function sol2(){
+			
+//	  		var str = "솔루션2 함수입니다.";
+			return str;
+		}
+		
+		
+		window.onload = function(){
+			document.write(sol1());
+			document.write(sol2());
+		}
+		
+ */
+		
+		
+		
+		
+		
+		//배열정리
+		
+		var arr = new Array();
+		
+		arr[0] = 1;
+		arr[1] = 2;
+		arr[10] = 10; //배열 legnth = 11
+		
+		var arr = [1,2,3,4];
+		var arr = new Array("a","b","c","d");
+		
+		
+		//출력하는 방법
+		
+		for(var i = 0; i < arr.length; i++){
+			arr[i];
+		}
+		
+		
+		//(★중요함)slice: 배열 값을 추가하거나 제거하여 반환하는 함수
+		
+		var ex = ["a","b","c","d"];
+		var ex2 = ex.splice(1,2);
+		//이게 없으면 위 배열에서 데이터가 떼어져 있는 채로 있게 된다. 배열이 변경돼서 조심해야 함.
+		
+		document.write(ex + "<br>");
+		document.write(ex2);				
+		
+
+		//다차원 배열(이중배열)
+		//이차원 배열선언
+		
+		var arr = new Array(1,2,3); //1차원 배열
+		var arr = new Array([1,2,3]); //2차원 배열
+		
+		var arr = new Array();
+		arr[0] = new Array(); //두 개가 합쳐져서 이차원 배열
+		arr[1] = new Array();
+		
+		arr[0][0]="가", arr[0][1]="나", arr[0][2]="다"; ..... //값은 이렇게 넣어주면 됨.
+		arr[1][0], arr[1][1], arr[1][2] ...........
+		
+		
+		//3차원 배열
+		//초기화
+		
+		var arr[0][0] = new Array();
+		arr[0][0][0] = "값";
+		
+		var arr = new Array( [[1,2,3],[4,5,6]] , [[1,2,3],[4,5,6]] ); //사용하는 것만 알고 있자.
+		
+		arr.length //행의 크기
+		arr[0].length //열의 크기
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+	</script>
+	
+	<body>
+		<!-- <span id="x" value="123">여기는 텍스트입니다.</span> -->
+	</body>
+</html>

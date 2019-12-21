@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>web shop</title>
+		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="./css/mystyle.css">
+	</head>
+	
+	<body>
+
+	<div id="warp">
+		<div id="header">
+			<h1>
+				<a href="#"><img src="./images/cart.png">Web Shop</a>
+			</h1>
+			</div>
+		<div id="nav">
+			<ul>
+				<li><a href="#">HOME</a></li>
+				<li><a href="#">ABOUT US</a></li>
+				<li><a href="#">NEWS</a></li>
+				<li><a href="#">MY ACCOUNT</a></li>
+				<li><a href="#">CONTACTS</a></li>
+			</ul>
+			</div>
+		<div id="category">
+			<h2>카테고리</h2>
+			<ul>
+				<li><a href="컴퓨터.html" target="fr">컴퓨터</a></li>
+				<li><a href="의류.html" target="fr">의류</a></li>
+				<li><a href="음악.html" target="fr">음악</a></li>
+				<li><a href="영화.html" target="fr">영화</a></li>
+				<li><a href="스포츠_레저.html" target="fr">스포츠/레저</a></li>
+				<li><a href="가구_인테리어.html" target="fr">가구/인테리어</a></li>
+				<li><a href="식품.html" target="fr">식품</a></li>
+			</ul>
+		
+		</div>
+		<div id="contents">
+			<iframe src="컴퓨터.html" name="fr"></iframe> <!-- src 는 기본 default 값 -->
+		</div>
+		<div id="aside">
+			<div id="shoppingCart">
+				<h2>Shopping Cart</h2>
+				현재 쇼핑카트에 물품이 없습니다.
+				<a href="shoppingCart.html" target="fr">쇼핑카트보기</a>
+			</div>
+			<div id="login">
+				<h2>Log In</h2>
+				아이디<br>
+				<input type="text" name="id"><br>
+				비밀번호<br>
+				<input type="password" name="password"><br>
+				<button onclick="login();">로그인</button>
+				<input type="button" value="초기화" onclick="reset();"><br>
+				<a href="회원가입.html" target="fr">회원가입</a>
+				<a href="#">비밀번호 분실</a>
+				
+			</div>
+		</div>
+		<div id="footer"></div>
+	</div>
+
+	</body>
+</html>

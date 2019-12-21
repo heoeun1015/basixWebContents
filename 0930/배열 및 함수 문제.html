@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>배열 및 함수 문제</title>
+		<style>
+		
+		</style>
+		<script>
+		
+			/*
+			
+			문제1) 두 정수 a, b가 주어졌을 때 a와 b사이에 속한 모든 정수의 합을 리턴하는 함수(solution)를 작성하세요.
+				예를 들어, a = 3, b = 7 이면 3 + 4 + 5 + 6 + 7 = 25 합을 리턴하여 출력하세요.
+				두 수가 같을 경우에는 0을 리턴해주세요.
+				b가 더 클 경우도  a = 7, b = 3 일 때,  7 + 6 + 5 + 4 + 3 = 25 합을 출력하세요.
+
+			*/
+		
+			
+			/* 
+			function solution(a, b){
+				var sum = 0;
+				if(a < b){
+					for(var i = a; i <= b; i++){
+						sum += i;
+					}return sum;
+				}else if(a > b){
+					for(var i = b; i <= a; i++){
+						sum += i;
+					}return sum;
+				}else{
+					return 0;
+				}
+			}
+			
+			var q1 = solution(3, 2);
+			document.write(q1);
+			 */
+			 
+			 
+			 /* (방법2)
+			 if(a>b) {
+				 var tmp = 0;
+				 a = b;
+				 b = tmp;
+			 }else if(a == b){
+				 return 0;
+			 }
+			 for(var i = a; i <= b; i++){
+				 sum += i;
+			 }
+			  */
+			 
+			
+			 
+			 // 문제2) 길이가 n이고, "수박수박수박수박수박…" 와 같은 패턴을 유지하는 문자열을 리턴하는 함수 solution을 완성하세요.
+			 
+			 /* 
+			 var number = ""; 
+			 
+			 function solution(a){
+				 for(var i = 1; i <= a; i++){
+					 if(i % 2 == 1){
+						 number = number + "수";
+					 }else {
+						 number = number + "박";
+					 }
+				 }return number;
+			 }
+			 
+			 var word = solution(1);
+			 document.write(word);
+			  */
+			  
+			  
+			  /* (방법2) 
+			  var str = "";
+			  for(var i = 0; i < n; i++){
+				  if(i % 2 == 1){
+					  str += "수"
+				  }else{
+					  str += "박"
+				  }
+			  }
+			  return str;
+			   */
+			  
+			  
+			 
+			  
+			  /* 
+			  문제3) 배열 arr이 주어집니다.
+				배열 arr 의 각 원소는 숫자 0부터 9까지로 이뤄져 있습니다.
+				이때, 배열  arr에서 연속적으로 나타나는 숫자는 하나만 남기고 전부 제거하려 합니다.
+				제거 후 arr의 남은 원소들을 반환하세요.
+				예를 들어, arr = [1,1,2,3,3,7,7,7] 이면 arr = [1,2,3,7]을 반환하세요.
+				
+				STEP2)
+				arr = [7,7,5,5,9,9,1] → arr = [7,5,9,1] → arr = [1,5,7,9]
+				
+				function solution(arr){
+					return arr;
+				}
+			
+				var arr = {1,1,2,3,3,7,7};
+				arr = solution(arr);
+				document.write(arr);
+			   */
+			  
+			    
+			   
+			   function solution(arr){
+				   var arr_tmp = new Array();
+				   for(var i = 0; i < arr.length - 1; i++){
+					  for(var j = i + 1; j < arr.length; j++){
+						  if(arr[i] == arr[j]){
+							  /* arr[j] = ""; */
+							  arr_tmp.push(arr[i]);
+						  }
+					  }
+				   }return arr_tmp;
+			   }
+			   
+			   
+				var arr = [1,1,2,3,3,7,7];
+				//var arr = [1,2,6,2,9,1,6];
+				arr = solution(arr);
+				document.write(arr.join(",")+"<br>");
+				document.write(arr.sort(function(a,b){return a-b;}).join(","));
+			   
+				
+				
+				 
+				
+				 /* 
+				function solution(arr){
+					var arr_tmp = new Array();
+					for(i = 0; i < arr.length; i++){
+						if(arr[i] != arr[i + 1]){
+							arr_tmp.push(arr[i]);
+						}
+					}
+					return arr_tmp;
+				}
+				
+				var arr = [1,1,2,3,3,7,7];
+				arr = solution(arr);
+				document.write(arr);
+				 */
+				
+			   
+			   
+			/*
+			
+			문제4) 노래가사에서 반복되는 단어를 찾아 몇 번 반복되는지 찾고 2번 이상 반복되는 단어와 횟수를 출력하세요.
+			(링딩동 - 단어는 띄어쓰기로 구분함.) 
+			
+			*/
+				
+			
+			var str = "abcdef";
+			var arr = new Array();
+			
+			for(var i = 0; i < str.length; i++){
+				arr[i] = str.charAt(i);
+			}
+			
+			document.write(arr);
+			
+			
+			
+			
+			
+			
+			
+			
+				
+				
+			
+			
+		</script>
+	</head>
+	
+	<body>
+		
+	</body>
+</html>

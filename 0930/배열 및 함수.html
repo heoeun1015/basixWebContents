@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>배열 및 함수</title>
+	</head>
+	<style>
+	
+		p{
+			color: red;
+		}
+	
+	</style>
+	<script>
+	
+		/*
+		
+			<< 배열을 생성하는 방법 >> 
+			1. var fruits = ["banana", "apple", "orange"];
+		
+			2. var fruits = new Array();
+			
+			3. var fruits = new Array();
+				fruits[0] = "banana";
+				fruits[1] = "apple";
+				fruits[2] = "orange";
+				
+			
+			<< 함수 만들기 >>
+			1. 파라미터가 있고 반환값도 있는 함수
+				function 함수명(파라미터1, 파라미터2 …){
+				
+				명령문;
+				return 반환값;
+			}
+			
+			2. 파라미터가 없고 반환값은 있는 함수
+				function 함수명(){
+				return 반환값;
+			}
+			
+			3. 파라미터가 있고 반환값은 없는 함수
+				function 함수명(파라미터1, 파라미터2 …){
+				명령문;
+			}
+			
+			4. 파라미터가 없고 반환값도 없는 함수
+				function 함수명(){
+				명령문;
+			}
+			
+			
+			
+			<< 함수 호출 >>
+			함수명(파라미터1, 파라미터2…);
+			
+			
+			
+			
+			*/
+
+			function sub(a,b){
+				return a + b;
+			}
+			
+			var sum = sub(1, 2); //함수호출
+//			document.write(sum);
+			
+			/* window.onload = function(){
+				document.getElementById("test").innerHTML = sum;
+			} */
+			//text 라는 아이디에게 넣을 것. 안쪽에 HTML 값을 하나 더 만들어 sum 을 넣는다는 의미.
+			//순차적이라서 null 값을 처음에 불러온다. innerHTML만 썼을 경우.
+			// window.onload 가 있어야 함. 이 태그를 전부 생성한 다음 다음을 찾아라.
+		
+		
+		
+	</script>
+	
+	<body>
+		<p id="test"></p>
+		<!-- <script>document.getElementById("test").innerHTML = sum;</script> -->
+		<!-- window.onload 사용하지 않으려면 순서상으로 맞춰서 넣으면 된다. -->
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
